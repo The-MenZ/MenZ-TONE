@@ -122,6 +122,7 @@ void loop() {
   if (buttonState == 0 && ready_tone == 0) {
     thisNote++;
     noTone(8);
+    delay(50);
     ready_tone = 1;
   }
 
