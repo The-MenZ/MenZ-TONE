@@ -31,6 +31,7 @@ long upButtonDebounceTime = 0;  // the last time the output pin was toggled
 long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
 volatile int currentSong = 0;
+
 int currentPosition = 0;
 int readyTone = 1;
 int nowNote;
@@ -53,6 +54,7 @@ void ledBlink() {
 void setup() {
   pinMode(PowerLedPin, OUTPUT);
   pinMode(ledPin, OUTPUT);
+
   pinMode(9, OUTPUT);
   pinMode(10, OUTPUT);
   pinMode(11, OUTPUT);
