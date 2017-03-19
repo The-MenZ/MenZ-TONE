@@ -1,5 +1,6 @@
-
+#include <avr/pgmspace.h>
 #include "pitches.h"
+#include "songs.h"
 
 const int PowerLedPin = 13;      // the number of the LED pin
 const int ledPin = 2;      // the number of the LED pin
@@ -12,7 +13,6 @@ const int seg6Pin = 5;      // the number of the LED pin
 const int seg7Pin = 6;      // the number of the LED pin
 const int seg9Pin = 7;      // the number of the LED pin
 const int seg10Pin = 8;      // the number of the LED pin
-int melodyNo = 0;
 
 const int buttonPin = 3;    // the number of the pushbutton pin
 int buttonState = 0;             // the current reading from the input pin
@@ -24,68 +24,10 @@ int lastUpButtonState = LOW;             // the current reading from the input p
 long upButtonDebounceTime = 0;  // the last time the output pin was toggled
 long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
-int thisNote = 0;
-int ready_tone = 1;
-
-// notes in the melody:
-int melody[5][143] = {
-  {
-     // パーパパパーパーパーパー
-     NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, NOTE_B3, NOTE_C4,
-     0
-  },
-  {
-    // キラキラ星
-    NOTE_C4, NOTE_C4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_G4,
-    NOTE_F4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C4,
-    NOTE_G4, NOTE_G4, NOTE_F4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4,
-    NOTE_G4, NOTE_G4, NOTE_F4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4,
-    NOTE_C4, NOTE_C4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_G4,
-    NOTE_F4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C4,
-    0
-  },
-  {
-    // ナウシカレクイエム
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_GS4,
-    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4,
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4,
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4,
-    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_A4, NOTE_B4,
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4,
-    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4,
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4,
-    NOTE_E4, NOTE_E4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4,
-    NOTE_D4, NOTE_D4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C5, NOTE_C5,
-    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D4, NOTE_A4, NOTE_D4,
-    NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_B4,
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4,
-    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4,
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4,
-    0
-  },
-  // ようこそなんとかパークへ
-  {
-    NOTE_F4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_F4, NOTE_G4, NOTE_A4,
-    NOTE_AS4, NOTE_B4, NOTE_C5, NOTE_A4, NOTE_G4, NOTE_F4,
-    NOTE_F4, NOTE_D5, NOTE_C5, NOTE_F4, NOTE_AS4, NOTE_A4,
-    NOTE_G4, NOTE_F4, NOTE_G4,
-    0
-  },
-  // 君が代
-  {
-    NOTE_D4,NOTE_C4,NOTE_D4,NOTE_E4,NOTE_G4,NOTE_E4,NOTE_D4,NOTE_E4,
-    NOTE_G4,NOTE_A4,NOTE_G4,NOTE_A4,NOTE_D5,NOTE_B4,NOTE_A4,NOTE_G4,
-    NOTE_E4,NOTE_G4,NOTE_A4,NOTE_D5,NOTE_C5,NOTE_D5,NOTE_E4,NOTE_G4,
-    NOTE_A4,NOTE_G4,NOTE_E4,NOTE_G4,NOTE_D4,NOTE_A4,NOTE_C5,NOTE_D5,
-    NOTE_C5,NOTE_D5,NOTE_A4,NOTE_G4,NOTE_A4,NOTE_G4,NOTE_E4,NOTE_D4,
-    0
-  },
-};
+int currentSong = 0;
+int currentPosition = 0;
+int readyTone = 1;
+int nowNote;
 
 void setup() {
   pinMode(PowerLedPin, OUTPUT);
@@ -123,14 +65,14 @@ void loop() {
 
       if (upButtonState == HIGH) {
         //曲の頭出し
-        thisNote = 0;
-        melodyNo = melodyNo + 1;
-        if(melodyNo >= 3) melodyNo = 0;
+        currentPosition = 0;
+        currentSong++;
+        if(currentSong >= songNum) currentSong = 0;
       }
     }
   }
 
-  if(melodyNo == 0){
+  if(currentSong == 0){
 //    digitalWrite(seg1Pin, LOW);
 //    digitalWrite(seg2Pin, LOW);
 //    digitalWrite(seg4Pin, LOW);
@@ -147,7 +89,7 @@ void loop() {
     digitalWrite(seg7Pin, HIGH);
     digitalWrite(seg9Pin, HIGH);
     digitalWrite(seg10Pin, LOW);
-  } else if(melodyNo == 1){
+  } else if(currentSong == 1){
 //    digitalWrite(seg1Pin, HIGH);
 //    digitalWrite(seg2Pin, HIGH);
 //    digitalWrite(seg4Pin, LOW);
@@ -164,7 +106,7 @@ void loop() {
     digitalWrite(seg7Pin, LOW);
     digitalWrite(seg9Pin, LOW);
     digitalWrite(seg10Pin, LOW);
-  } else if(melodyNo == 2){
+  } else if(currentSong == 2){
 //    digitalWrite(seg1Pin, LOW);
 //    digitalWrite(seg2Pin, LOW);
 //    digitalWrite(seg4Pin, HIGH);
@@ -187,37 +129,37 @@ void loop() {
 
 
   // ONされて一回だけ実行
-  if(buttonState == 1 && ready_tone == 1){
+  if(buttonState == 1 && readyTone == 1){
     digitalWrite(ledPin, HIGH);
-
+    nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
     // 最後の音まで来たらリセット
-    if(melody[melodyNo][thisNote] == 0){
+    if(nowNote == 0){
       // Serial.print("if melody_size: ");
       // Serial.println(melody_size);
-      Serial.print("if thisNote: ");
-      Serial.println(thisNote);
-      thisNote = 0;
+      Serial.print("if currentPosition: ");
+      Serial.println(currentPosition);
+      currentPosition = 0;
+      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
     }
 
-      int noteDuration = 1000 / 8;
-      tone(14, melody[melodyNo][thisNote]);
-      Serial.print("tone: ");
-      Serial.println(melody[melodyNo][thisNote]);
-      Serial.print("thisNote: ");
-      Serial.println(thisNote);
+    tone(14, nowNote);
+    Serial.print("tone: ");
+    Serial.println(nowNote);
+    Serial.print("currentPosition: ");
+    Serial.println(currentPosition);
 
     // ifを何度も実行しないようにフラグを立てる
-      ready_tone = 0;
+    readyTone = 0;
 
   }
 
   // OFFされて一回だけ実行
-  if (buttonState == 0 && ready_tone == 0) {
+  if (buttonState == 0 && readyTone == 0) {
     digitalWrite(ledPin, LOW);
-    thisNote++;
+    currentPosition++;
     noTone(14);
     delay(50);
-    ready_tone = 1;
+    readyTone = 1;
   }
 
 }
