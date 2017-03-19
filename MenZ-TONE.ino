@@ -27,8 +27,8 @@ const int upButtonPin = 4;    // the number of the pushbutton pin
 int upButtonState;             // the current reading from the input pin
 int lastUpButtonState = LOW;             // the current reading from the input pin
 
-long upButtonDebounceTime = 0;  // the last time the output pin was toggled
-long debounceDelay = 50;    // the debounce time; increase if the output flickers
+unsigned long upButtonDebounceTime = 0;  // the last time the output pin was toggled
+unsigned long debounceDelay = 500;    // the debounce time; increase if the output flickers
 
 volatile int currentSong = 0;
 
@@ -99,8 +99,6 @@ void loop() {
     }
   }
 
-  lastUpButtonState = reading;
-
   // ONされて一回だけ実行
   if(buttonState == 1 && readyTone == 1){
     digitalWrite(ledPin, HIGH);
@@ -134,5 +132,8 @@ void loop() {
     delay(50);
     readyTone = 1;
   }
+
+  lastUpButtonState = reading;
+
 
 }
