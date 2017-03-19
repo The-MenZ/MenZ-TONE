@@ -5,7 +5,7 @@
 
 const int PowerLedPin = 13;      // the number of the LED pin
 const int ledPin = 2;      // the number of the LED pin
-const int anode_pins[] = {9, 10, 11, 5, 6, 7, 8};    // アノードに接続するArduinoのピン
+const int anode_pins[] = {9, 10, 11, 5, 6, 7, 8, 12};    // アノードに接続するArduinoのピン
 //const int digits[] = {
 volatile int digits[] = {
   0b11000000, // 0
@@ -18,6 +18,18 @@ volatile int digits[] = {
   0b11000011, // 7
   0b10000000, // 8
   0b10000001, // 9
+};
+
+volatile int bootDigits[] = {
+  0b11111011, // 4
+  0b11111101, // 5
+  0b11111110, // 6
+  0b10111111, // 0
+  0b11110111, // 3
+  0b11101111, // 2
+  0b11011111, // 1
+  0b10111111, // 0
+  0b11111011, // 4
 };
 
 const int buttonPin = 3;    // the number of the pushbutton pin
@@ -65,6 +77,13 @@ void setup() {
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
   PORTD = B11100000;
+
+  for(int j = 0; j < (sizeof(bootDigits) / sizeof(bootDigits[0])); j++){
+    for (int i = 0; i < (sizeof(anode_pins) / sizeof(anode_pins[0])); i++) {
+      digitalWrite(anode_pins[i], bootDigits[j] & (1 << i) ? HIGH : LOW);
+    }
+    delay(100);
+  }
 
 //  digitalWrite(PowerLedPin, HIGH);
 //  Timer1.initialize(1000000); //マイクロ秒単位で設定
@@ -134,6 +153,5 @@ void loop() {
   }
 
   lastUpButtonState = reading;
-
 
 }
