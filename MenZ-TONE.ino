@@ -40,7 +40,7 @@ int upButtonState;             // the current reading from the input pin
 int lastUpButtonState = LOW;             // the current reading from the input pin
 
 unsigned long upButtonDebounceTime = 0;  // the last time the output pin was toggled
-unsigned long debounceDelay = 500;    // the debounce time; increase if the output flickers
+unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
 volatile int currentSong = 0;
 
