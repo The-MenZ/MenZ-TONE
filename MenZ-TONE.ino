@@ -28,19 +28,11 @@ int thisNote = 0;
 int ready_tone = 1;
 
 // notes in the melody:
-
-int melody[] = {
-    // パーパパパーパーパーパー
-    NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, NOTE_B3, NOTE_C4
-};
-
-int melody_size = sizeof(melody) / sizeof(melody[0]);
-
-int melody2[3][143] = {
+int melody[5][143] = {
   {
-    // パーパパパーパーパーパー
-    NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, NOTE_B3, NOTE_C4,
-    0
+     // パーパパパーパーパーパー
+     NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, NOTE_B3, NOTE_C4,
+     0
   },
   {
     // キラキラ星
@@ -54,28 +46,45 @@ int melody2[3][143] = {
   },
   {
     // ナウシカレクイエム
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, 
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_GS4, 
-    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4, 
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4, 
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, 
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, 
-    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, 
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_A4, NOTE_B4, 
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, 
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, 
-    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4, 
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4, 
-    NOTE_E4, NOTE_E4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4, 
-    NOTE_D4, NOTE_D4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C5, NOTE_C5, 
-    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D4, NOTE_A4, NOTE_D4, 
-    NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_B4, 
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, 
-    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, 
-    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4, 
+    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
+    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_GS4,
+    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4,
+    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4,
+    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
+    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4,
+    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
+    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_A4, NOTE_B4,
+    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
+    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4,
+    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4,
+    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4,
+    NOTE_E4, NOTE_E4, NOTE_E4, NOTE_E4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4, NOTE_D4,
+    NOTE_D4, NOTE_D4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_D4, NOTE_D4, NOTE_C5, NOTE_C5,
+    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D4, NOTE_A4, NOTE_D4,
+    NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4, NOTE_E4, NOTE_B4,
+    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4,
+    NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_G4,
+    NOTE_E4, NOTE_A4, NOTE_C5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_E4, NOTE_E4, NOTE_E4,
     NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5, NOTE_B4, NOTE_A4,
     0
-  }
+  },
+  // ようこそなんとかパークへ
+  {
+    NOTE_F4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_F4, NOTE_G4, NOTE_A4,
+    NOTE_AS4, NOTE_B4, NOTE_C5, NOTE_A4, NOTE_G4, NOTE_F4,
+    NOTE_F4, NOTE_D5, NOTE_C5, NOTE_F4, NOTE_AS4, NOTE_A4,
+    NOTE_G4, NOTE_F4, NOTE_G4,
+    0
+  },
+  // 君が代
+  {
+    NOTE_D4,NOTE_C4,NOTE_D4,NOTE_E4,NOTE_G4,NOTE_E4,NOTE_D4,NOTE_E4,
+    NOTE_G4,NOTE_A4,NOTE_G4,NOTE_A4,NOTE_D5,NOTE_B4,NOTE_A4,NOTE_G4,
+    NOTE_E4,NOTE_G4,NOTE_A4,NOTE_D5,NOTE_C5,NOTE_D5,NOTE_E4,NOTE_G4,
+    NOTE_A4,NOTE_G4,NOTE_E4,NOTE_G4,NOTE_D4,NOTE_A4,NOTE_C5,NOTE_D5,
+    NOTE_C5,NOTE_D5,NOTE_A4,NOTE_G4,NOTE_A4,NOTE_G4,NOTE_E4,NOTE_D4,
+    0
+  },
 };
 
 void setup() {
@@ -89,9 +98,6 @@ void setup() {
   pinMode(seg7Pin, OUTPUT);
   pinMode(seg9Pin, OUTPUT);
   pinMode(seg10Pin, OUTPUT);
-//  digitalWrite(seg1Pin, LOW);
-//  digitalWrite(seg2Pin, HIGH);
-//  digitalWrite(seg3Pin, LOW);
   PORTD = B11100000;
 
   digitalWrite(PowerLedPin, HIGH);
@@ -101,9 +107,6 @@ void setup() {
 
   Serial.begin(9600);
   Serial.println("DEBUG DEBUG DEBUG");
-  Serial.print("melody_size: ");
-  Serial.println(melody_size);
-
 }
 
 void loop() {
@@ -188,18 +191,18 @@ void loop() {
     digitalWrite(ledPin, HIGH);
 
     // 最後の音まで来たらリセット
-    if(melody2[melodyNo][thisNote] == 0){
-      Serial.print("if melody_size: ");
-      Serial.println(melody_size);
+    if(melody[melodyNo][thisNote] == 0){
+      // Serial.print("if melody_size: ");
+      // Serial.println(melody_size);
       Serial.print("if thisNote: ");
       Serial.println(thisNote);
       thisNote = 0;
     }
 
       int noteDuration = 1000 / 8;
-      tone(14, melody2[melodyNo][thisNote]);
+      tone(14, melody[melodyNo][thisNote]);
       Serial.print("tone: ");
-      Serial.println(melody2[melodyNo][thisNote]);
+      Serial.println(melody[melodyNo][thisNote]);
       Serial.print("thisNote: ");
       Serial.println(thisNote);
 
