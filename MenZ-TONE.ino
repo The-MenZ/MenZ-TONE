@@ -8,16 +8,16 @@ const int ledPin = 2;      // the number of the LED pin
 const int anode_pins[] = {9, 10, 11, 5, 6, 7, 8};    // アノードに接続するArduinoのピン
 //const int digits[] = {
 volatile int digits[] = {
-  0b01000000, // 0
-  0b01110011, // 1
-  0b00100100, // 2
-  0b00100001, // 3
-  0b00010011, // 4
-  0b00001001, // 5
-  0b00001000, // 6
-  0b01000011, // 7
-  0b00000000, // 8
-  0b00000001, // 9
+  0b11000000, // 0
+  0b11110011, // 1
+  0b10100100, // 2
+  0b10100001, // 3
+  0b10010011, // 4
+  0b10001001, // 5
+  0b10001000, // 6
+  0b11000011, // 7
+  0b10000000, // 8
+  0b10000001, // 9
 };
 
 const int buttonPin = 3;    // the number of the pushbutton pin
@@ -59,6 +59,7 @@ void setup() {
   pinMode(10, OUTPUT);
   pinMode(11, OUTPUT);
   pinMode(12, OUTPUT);
+  digitalWrite(12, HIGH);
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(7, OUTPUT);
@@ -67,7 +68,7 @@ void setup() {
 
 //  digitalWrite(PowerLedPin, HIGH);
 //  Timer1.initialize(1000000); //マイクロ秒単位で設定
-  Timer1.initialize(15000); //マイクロ秒単位で設定
+  Timer1.initialize(13000); //マイクロ秒単位で設定
   Timer1.attachInterrupt(ledBlink);
 
   pinMode(buttonPin, INPUT);
