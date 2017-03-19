@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 #include <TimerOne.h>
-=======
 #include <avr/pgmspace.h>
->>>>>>> origin/master
 #include "pitches.h"
 #include "songs.h"
 
@@ -17,11 +14,8 @@ const int seg6Pin = 5;      // the number of the LED pin
 const int seg7Pin = 6;      // the number of the LED pin
 const int seg9Pin = 7;      // the number of the LED pin
 const int seg10Pin = 8;      // the number of the LED pin
-<<<<<<< HEAD
 const int anode_pins[] = {9, 10, 11, 5, 6, 7, 8};    // アノードに接続するArduinoのピン
 int melodyNo = 0;
-=======
->>>>>>> origin/master
 
 const int buttonPin = 3;    // the number of the pushbutton pin
 int buttonState = 0;             // the current reading from the input pin
@@ -89,7 +83,6 @@ void loop() {
     }
   }
 
-<<<<<<< HEAD
 const int digits[] = {
   0b01000000, // 0
   0b01110011, // 1
@@ -119,59 +112,6 @@ const int digits[] = {
     for (int i = 0; i < (sizeof(anode_pins) / sizeof(anode_pins[0])); i++) {
       digitalWrite(anode_pins[i], digits[melodyNo] & (1 << i) ? HIGH : LOW);
     }
-=======
-  if(currentSong == 0){
-//    digitalWrite(seg1Pin, LOW);
-//    digitalWrite(seg2Pin, LOW);
-//    digitalWrite(seg4Pin, LOW);
-//    digitalWrite(seg5Pin, HIGH);
-//    digitalWrite(seg6Pin, LOW);
-//    digitalWrite(seg7Pin, LOW);
-//    digitalWrite(seg9Pin, LOW);
-//    digitalWrite(seg10Pin, HIGH);
-    digitalWrite(seg1Pin, HIGH);
-    digitalWrite(seg2Pin, HIGH);
-    digitalWrite(seg4Pin, HIGH);
-    digitalWrite(seg5Pin, LOW);
-    digitalWrite(seg6Pin, HIGH);
-    digitalWrite(seg7Pin, HIGH);
-    digitalWrite(seg9Pin, HIGH);
-    digitalWrite(seg10Pin, LOW);
-  } else if(currentSong == 1){
-//    digitalWrite(seg1Pin, HIGH);
-//    digitalWrite(seg2Pin, HIGH);
-//    digitalWrite(seg4Pin, LOW);
-//    digitalWrite(seg5Pin, HIGH);
-//    digitalWrite(seg6Pin, LOW);
-//    digitalWrite(seg7Pin, HIGH);
-//    digitalWrite(seg9Pin, HIGH);
-//    digitalWrite(seg10Pin, HIGH);
-    digitalWrite(seg1Pin, LOW);
-    digitalWrite(seg2Pin, LOW);
-    digitalWrite(seg4Pin, HIGH);
-    digitalWrite(seg5Pin, LOW);
-    digitalWrite(seg6Pin, HIGH);
-    digitalWrite(seg7Pin, LOW);
-    digitalWrite(seg9Pin, LOW);
-    digitalWrite(seg10Pin, LOW);
-  } else if(currentSong == 2){
-//    digitalWrite(seg1Pin, LOW);
-//    digitalWrite(seg2Pin, LOW);
-//    digitalWrite(seg4Pin, HIGH);
-//    digitalWrite(seg5Pin, HIGH);
-//    digitalWrite(seg6Pin, LOW);
-//    digitalWrite(seg7Pin, LOW);
-//    digitalWrite(seg9Pin, HIGH);
-//    digitalWrite(seg10Pin, LOW);
-    digitalWrite(seg1Pin, HIGH);
-    digitalWrite(seg2Pin, HIGH);
-    digitalWrite(seg4Pin, LOW);
-    digitalWrite(seg5Pin, LOW);
-    digitalWrite(seg6Pin, HIGH);
-    digitalWrite(seg7Pin, HIGH);
-    digitalWrite(seg9Pin, LOW);
-    digitalWrite(seg10Pin, HIGH);
->>>>>>> origin/master
   }
 
   lastUpButtonState = reading;
