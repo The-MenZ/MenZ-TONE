@@ -3,21 +3,21 @@
 #include "pitches.h"
 #include "songs.h"
 
-const int PowerLedPin = 13;      // the number of the LED pin
+const int PowerLedPin = 15;      // the number of the LED pin
 const int ledPin = 2;      // the number of the LED pin
 const int anode_pins[] = {9, 10, 11, 5, 6, 7, 8, 12};    // アノードに接続するArduinoのピン
 //const int digits[] = {
 volatile int digits[] = {
-  0b11000000, // 0
-  0b11110011, // 1
-  0b10100100, // 2
-  0b10100001, // 3
-  0b10010011, // 4
-  0b10001001, // 5
-  0b10001000, // 6
-  0b11000011, // 7
-  0b10000000, // 8
-  0b10000001, // 9
+  0b01000000, // 0
+  0b01110011, // 1
+  0b00100100, // 2
+  0b00100001, // 3
+  0b00010011, // 4
+  0b00001001, // 5
+  0b00001000, // 6
+  0b01000011, // 7
+  0b00000000, // 8
+  0b00000001, // 9
 };
 
 volatile int bootDigits[] = {
@@ -42,11 +42,19 @@ int lastUpButtonState = LOW;             // the current reading from the input p
 unsigned long upButtonDebounceTime = 0;  // the last time the output pin was toggled
 unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
+const int downButtonPin = 13;    // the number of the pushbutton pin
+int downButtonState;             // the current reading from the input pin
+int lastDownButtonState = LOW;             // the current reading from the input pin
+unsigned long downButtonDebounceTime = 0;  // the last time the output pin was toggled
+unsigned long downDebounceDelay = 50;    // the debounce time; increase if the output flickers
+int autoPlay = 0;
+
 volatile int currentSong = 0;
 
 int currentPosition = 0;
 int readyTone = 1;
 int nowNote;
+int nowNoteDuration;
 
 void ledBlink() {
   static boolean output = LOW;  // プログラム起動前に１回だけHIGH(1)で初期化される
@@ -92,6 +100,7 @@ void setup() {
 
   pinMode(buttonPin, INPUT);
   pinMode(upButtonPin, INPUT);
+  pinMode(downButtonPin, INPUT);
 
   Serial.begin(9600);
   Serial.println("DEBUG DEBUG DEBUG");
@@ -105,6 +114,12 @@ void loop() {
     upButtonDebounceTime = millis();
   }
 
+  int downButtonReading = digitalRead(downButtonPin);
+  if (downButtonReading != lastDownButtonState) {
+    downButtonDebounceTime = millis();
+  }
+
+  // ボタンプッシュで曲選択
   if ((millis() - upButtonDebounceTime) > debounceDelay) {
     if (reading != upButtonState) {
       upButtonState = reading;
@@ -118,14 +133,52 @@ void loop() {
     }
   }
 
+  // ボタンプッシュで自動演奏
+  if ((millis() - downButtonDebounceTime) > downDebounceDelay) {
+    if (downButtonReading != downButtonState) {
+      Serial.println("DEBUG DEBUG DEBUG downButton: ");
+      downButtonState = downButtonReading;
+      autoPlay = 1;
+    }
+  }
+
+  // 自動演奏モード
+  if(autoPlay == 1){
+    Serial.println("DEBUG DEBUG DEBUG autoPlay: ");
+    nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    nowNoteDuration = 1000 / pgm_read_word(&noteDurations[currentSong][currentPosition]);
+    // 最後の音まで来たらリセット
+    if(nowNote == 0){
+      Serial.print("if currentPosition: ");
+      Serial.println(currentPosition);
+      currentPosition = 0;
+      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+      autoPlay = 0;
+      Serial.println("DEBUG DEBUG DEBUG reset: ");
+    } else {
+      tone(14, nowNote, nowNoteDuration);
+
+      int pauseBetweenNotes = nowNoteDuration * 1.30;
+      delay(pauseBetweenNotes);
+
+     noTone(14);
+     currentPosition++;
+    }
+
+  }
+
   // ONされて一回だけ実行
   if(buttonState == 1 && readyTone == 1){
     digitalWrite(ledPin, HIGH);
     nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    autoPlay = 0;
+    // 1はスキップ
+    if(nowNote == 1){
+      currentPosition++;
+      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    }
     // 最後の音まで来たらリセット
     if(nowNote == 0){
-      // Serial.print("if melody_size: ");
-      // Serial.println(melody_size);
       Serial.print("if currentPosition: ");
       Serial.println(currentPosition);
       currentPosition = 0;
@@ -153,5 +206,6 @@ void loop() {
   }
 
   lastUpButtonState = reading;
+  lastDownButtonState = downButtonReading;
 
 }
