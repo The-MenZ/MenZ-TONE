@@ -46,19 +46,19 @@ const PROGMEM uint16_t melody[songNum][256] =
   {
     NOTE_B4, NOTE_CS5, NOTE_D5, NOTE_A5,
     NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5,
-    NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_E5, NOTE_CS5, NOTE_D5,
+    1, NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_E5, NOTE_CS5, NOTE_D5,
     NOTE_CS5, NOTE_CS5, NOTE_B4, NOTE_FS4,
     NOTE_B4, NOTE_CS5, NOTE_D5, NOTE_A5,
-    NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5,
+    NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5, 1,
     NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_FS5, NOTE_A5, NOTE_D6,
     NOTE_CS6, NOTE_B5, NOTE_FS5, NOTE_E5,
     NOTE_FS5, NOTE_A5, NOTE_B5, NOTE_CS6,
     NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5,
-    NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_E5, NOTE_CS5, NOTE_D5,
+    1, NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_E5, NOTE_CS5, NOTE_D5,
     NOTE_CS5, NOTE_CS5, NOTE_B4, NOTE_FS4,
-    NOTE_B4, NOTE_CS5, NOTE_D5, NOTE_A5,
+    1, NOTE_B4, NOTE_CS5, NOTE_D5, NOTE_A5,
     NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5,
-    NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_FS5, NOTE_A5, NOTE_D6,
+    1, NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_FS5, NOTE_A5, NOTE_D6,
     NOTE_CS6, NOTE_B5,
     NOTE_B5, NOTE_B5,
     NOTE_CS6, NOTE_B5,
@@ -221,3 +221,37 @@ const PROGMEM uint16_t defaultSongs[songNum][256] =
     0
   }
 };
+
+// 休符は二つ連続で入れちゃダメよー
+const PROGMEM uint16_t noteDurations[songNum][256] =
+{
+  // パーパパパーパーパーパー
+  {
+     4, 8, 8, 4, 4, 4, 4, 4,
+     0
+  },
+    // 鳥の詩
+  {
+    4, 8, 8, 8,
+    4, 8, 8, 2,
+    3, 8, 8, 8, 8,
+    4, 8, 16, 2,
+    4, 8, 4, 8, 8, 8,
+    4, 8, 8, 2, 4,
+    8, 8, 8, 8, 8, 8,
+    8, 6, 3, 8,
+    4, 4, 4, 4,
+    4, 8, 16, 1,
+    4, 8, 8, 8, 8, 8, 8,
+    4, 8, 16, 1,
+    3, 4, 8, 8, 8,
+    4, 8, 16, 1,
+    4, 8, 8, 8, 8, 8, 8,
+    6, 8,
+    2, 4,
+    2, 4,
+    1,
+    0
+  },
+};
+
