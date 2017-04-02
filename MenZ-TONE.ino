@@ -21,15 +21,26 @@ volatile int digits[] = {
 };
 
 volatile int bootDigits[] = {
-  0b11111011, // 4
+//  0b11111011, // 4
+//  0b11111101, // 5
+//  0b11111110, // 6
+//  0b10111111, // 0
+//  0b11110111, // 3
+//  0b11101111, // 2
+//  0b11011111, // 1
+//  0b10111111, // 0
+//  0b11111011, // 4
+
   0b11111101, // 5
-  0b11111110, // 6
-  0b10111111, // 0
-  0b11110111, // 3
-  0b11101111, // 2
-  0b11011111, // 1
-  0b10111111, // 0
-  0b11111011, // 4
+  0b11111100, // 6
+  0b10111110, // 0
+  0b10110111, // 3
+  0b11100111, // 2
+  0b11001111, // 1
+  0b10011111, // 0
+  0b10111011, // 4
+  0b11111001, // 5
+  0b11111101, // 5
 };
 
 const int buttonPin = 3;    // the number of the pushbutton pin
@@ -86,13 +97,14 @@ void setup() {
   pinMode(8, OUTPUT);
   PORTD = B11100000;
 
-  for(int j = 0; j < (sizeof(bootDigits) / sizeof(bootDigits[0])); j++){
-    for (int i = 0; i < (sizeof(anode_pins) / sizeof(anode_pins[0])); i++) {
-      digitalWrite(anode_pins[i], bootDigits[j] & (1 << i) ? HIGH : LOW);
+  for(int n = 0; n < 3; n++){
+    for(int j = 0; j < (sizeof(bootDigits) / sizeof(bootDigits[0])); j++){
+      for (int i = 0; i < (sizeof(anode_pins) / sizeof(anode_pins[0])); i++) {
+        digitalWrite(anode_pins[i], bootDigits[j] & (1 << i) ? HIGH : LOW);
+      }
+      delay(30);
     }
-    delay(100);
   }
-
 //  digitalWrite(PowerLedPin, HIGH);
 //  Timer1.initialize(1000000); //マイクロ秒単位で設定
   Timer1.initialize(13000); //マイクロ秒単位で設定
