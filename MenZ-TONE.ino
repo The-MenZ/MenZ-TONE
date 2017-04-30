@@ -66,6 +66,7 @@ int currentPosition = 0;
 int readyTone = 1;
 int nowNote;
 int nowNoteDuration;
+int tempo;
 
 void ledBlink() {
   static boolean output = LOW;  // プログラム起動前に１回だけHIGH(1)で初期化される
@@ -158,9 +159,15 @@ void loop() {
   if(autoPlay == 1){
     Serial.println("DEBUG DEBUG DEBUG autoPlay: ");
     nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
-    nowNoteDuration = 1000 / pgm_read_word(&noteDurations[currentSong][currentPosition]);
+    tempo = pgm_read_word(&tempoList[currentSong]);
+    nowNoteDuration = pgm_read_word(&noteDurations[currentSong][currentPosition]);
+    Serial.print("tempo: ");
+    Serial.println(tempo);
+    Serial.print("nowNoteDuration: ");
+    Serial.println(nowNoteDuration);
+    nowNoteDuration = (int)((240000 / tempo) / nowNoteDuration);
     // 最後の音まで来たらリセット
-    if(nowNote == 0){
+    if(nowNote == 0) {
       Serial.print("if currentPosition: ");
       Serial.println(currentPosition);
       currentPosition = 0;
@@ -168,13 +175,16 @@ void loop() {
       autoPlay = 0;
       Serial.println("DEBUG DEBUG DEBUG reset: ");
     } else {
-      tone(14, nowNote, nowNoteDuration);
+      Serial.print("nowNoteDuration: ");
+      Serial.println(nowNoteDuration);
 
-      int pauseBetweenNotes = nowNoteDuration * 1.30;
-      delay(pauseBetweenNotes);
+      if (nowNote > 1) {
+        tone(14, nowNote);
+      }
+      delay(nowNoteDuration);
 
-     noTone(14);
-     currentPosition++;
+      noTone(14);
+      currentPosition++;
     }
 
   }

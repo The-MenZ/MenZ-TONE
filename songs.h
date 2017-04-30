@@ -12,11 +12,11 @@ const PROGMEM uint16_t melody[songNum][256] =
   },
   // なん本桜
   {
-    NOTE_D4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_A4,
+    NOTE_D4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, REST, NOTE_A4,
     NOTE_C5, NOTE_D5, NOTE_G4, NOTE_F4, NOTE_A4,
-    NOTE_D4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_A4,
+    NOTE_D4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, REST, NOTE_A4,
     NOTE_AS4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_F4,
-    NOTE_D4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_A4,
+    NOTE_D4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, REST, NOTE_A4,
     NOTE_C5, NOTE_D5, NOTE_G4, NOTE_F4, NOTE_A4,
     NOTE_D4, NOTE_F4, NOTE_AS4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_G4,
     NOTE_A4, NOTE_E4, NOTE_C4, NOTE_D4,
@@ -46,19 +46,19 @@ const PROGMEM uint16_t melody[songNum][256] =
   {
     NOTE_B4, NOTE_CS5, NOTE_D5, NOTE_A5,
     NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5,
-    1, NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_E5, NOTE_CS5, NOTE_D5,
+    NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_E5, NOTE_CS5, NOTE_D5,
     NOTE_CS5, NOTE_CS5, NOTE_B4, NOTE_FS4,
     NOTE_B4, NOTE_CS5, NOTE_D5, NOTE_A5,
-    NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5, 1,
+    NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5,
     NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_FS5, NOTE_A5, NOTE_D6,
     NOTE_CS6, NOTE_B5, NOTE_FS5, NOTE_E5,
     NOTE_FS5, NOTE_A5, NOTE_B5, NOTE_CS6,
     NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5,
-    1, NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_E5, NOTE_CS5, NOTE_D5,
+    NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_E5, NOTE_CS5, NOTE_D5,
     NOTE_CS5, NOTE_CS5, NOTE_B4, NOTE_FS4,
-    1, NOTE_B4, NOTE_CS5, NOTE_D5, NOTE_A5,
+    NOTE_B4, NOTE_CS5, NOTE_D5, NOTE_A5,
     NOTE_FS5, NOTE_FS5, NOTE_E5, NOTE_FS5,
-    1, NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_FS5, NOTE_A5, NOTE_D6,
+    NOTE_E5, NOTE_FS5, NOTE_A5, NOTE_FS5, NOTE_A5, NOTE_D6,
     NOTE_CS6, NOTE_B5,
     NOTE_B5, NOTE_B5,
     NOTE_CS6, NOTE_B5,
@@ -236,15 +236,34 @@ const PROGMEM uint16_t defaultSongs[songNum][256] =
   }
 };
 
+const PROGMEM uint16_t tempoList[songNum] = {
+  170, 154
+};
+
 // 休符は二つ連続で入れちゃダメよー
 const PROGMEM uint16_t noteDurations[songNum][256] =
 {
-  // パーパパパーパーパーパー
+  // ようこそなんとかパークへ
   {
-     4, 8, 8, 4, 4, 4, 4, 4,
-     0
+    8, 8, 8, 4, 8, 8, 4,
+    8, 8, 4, 8, 8, 8, 
+    4, 4, 4, 4, 8, 8,
+    8, 8, 2,
+    0
   },
-    // 鳥の詩
+  // 何本桜
+  {
+    8, 8, 6, 6, 8, 4, 8, 8,
+    8, 8, 8, 8, 4,
+    8, 8, 6, 6, 8, 4, 8, 8,
+    8, 8, 8, 8, 4,
+    8, 8, 6, 6, 8, 4, 8, 8,
+    8, 8, 8, 8, 4,
+    8, 8, 4, 4, 4, 4, 8,
+    8, 8, 8, 4,
+    0
+  },
+  // 鳥のなんとか
   {
     4, 8, 8, 8,
     4, 8, 8, 2,
