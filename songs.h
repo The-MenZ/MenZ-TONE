@@ -144,7 +144,7 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_A4, NOTE_C5, NOTE_C5, NOTE_A4, NOTE_C5, NOTE_D5,
     NOTE_A4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_F4,
 
-    NOTE_D4, NOTE_D4, NOTE_A4, NOTE_A4,
+    NOTE_D4, NOTE_D4, NOTE_A4, REST, NOTE_A4,
     NOTE_G4, NOTE_A4, NOTE_C5, NOTE_G4,
     NOTE_G4, NOTE_F4, NOTE_G4, NOTE_A4,
     NOTE_F4, NOTE_G4, NOTE_A4, NOTE_A4,
@@ -158,7 +158,7 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_G4, NOTE_A4, NOTE_C5, NOTE_G4,
     NOTE_G4, NOTE_F4,
 
-    NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4,
+    REST, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4,
     0
   },
   // Auld Lang Syne
@@ -247,7 +247,7 @@ const PROGMEM uint16_t tempoList[songNum] = {
   200, // なんとかワールド
   123, // なんとかぴっぴはなんとかかんとか
   143, // 翔べなにダム
-  999, // Godなんとか
+  150, // Godなんとか
   999, // Auld Lang Syne
   
 };
@@ -420,6 +420,26 @@ const PROGMEM uint16_t noteDurations[songNum][256] =
 //
 //    NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4,
 //    0
+    4, 8, 4,
+    4, 8, 8, 16, 6, 4,
+    4, 8, 8, 16, 6, 4,
+    4, 8, 8, 4, 8, 8,
+    4, 4, 4, 8, 8, 8,
+
+    4, 8, 3, 8,
+    8, 4, 4, 4, 4,
+    2, 8, 8, 3,
+    4, 8, 4,
+    4, 8, 8, 16, 6, 4,
+    4, 8, 8, 16, 6, 4,
+
+    4, 8, 8, 4, 8, 8, 4, 4,
+    4, 8, 8, 8, 3, 2,
+    8, 4, 4, 4, 4, 3, 2,
+
+    4, 4, 8, 4, 8, 2, 2,
+
+    0
   },
 };
 
