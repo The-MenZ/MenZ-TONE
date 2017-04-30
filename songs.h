@@ -35,10 +35,10 @@ const PROGMEM uint16_t melody[songNum][256] =
   {
     NOTE_E4, NOTE_E4, NOTE_B4, NOTE_B4,
     NOTE_CS5, NOTE_B4, NOTE_A4, NOTE_B4, NOTE_GS4, NOTE_FS4,
-    NOTE_E4, NOTE_E5, NOTE_DS5, NOTE_B4, NOTE_CS5,
+    NOTE_E4, NOTE_E5, NOTE_DS5, NOTE_B4, NOTE_CS5, REST,
     NOTE_A4, NOTE_A4, NOTE_A4, NOTE_B4, NOTE_CS5,
     NOTE_B4, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_FS4, NOTE_GS4,
-    NOTE_A4, NOTE_GS4, NOTE_A4, NOTE_GS4, NOTE_A4, NOTE_B4, NOTE_GS4,
+    NOTE_A4, NOTE_GS4, NOTE_A4, NOTE_GS4, NOTE_A4, NOTE_B4, NOTE_GS4, REST,
     NOTE_A4, NOTE_GS4, NOTE_FS4,
     0
   },
@@ -237,10 +237,9 @@ const PROGMEM uint16_t defaultSongs[songNum][256] =
 };
 
 const PROGMEM uint16_t tempoList[songNum] = {
-  170, 154
+  170, 154, 151
 };
 
-// 休符は二つ連続で入れちゃダメよー
 const PROGMEM uint16_t noteDurations[songNum][256] =
 {
   // ようこそなんとかパークへ
@@ -261,6 +260,17 @@ const PROGMEM uint16_t noteDurations[songNum][256] =
     8, 8, 8, 8, 4,
     8, 8, 4, 4, 4, 4, 8,
     8, 8, 8, 4,
+    0
+  },
+  // なんとかのなんとかリオン
+  {
+    4, 4, 4, 4,
+    4, 8, 8, 4, 8, 8,
+    4, 4, 4, 4, 2, 4,
+    4, 4, 4, 8, 8,
+    4, 8, 8, 4, 8, 8,
+    8, 8, 8, 8, 4, 8, 4, 8,
+    16, 16, 4,
     0
   },
   // 鳥のなんとか
