@@ -1,4 +1,4 @@
-const int songNum = 11;
+const int songNum = 10;
 
 const PROGMEM uint16_t melody[songNum][256] =
 {
