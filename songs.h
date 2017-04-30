@@ -121,17 +121,18 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_E4, NOTE_G4, NOTE_C5, NOTE_C5, NOTE_C5,
     NOTE_E4, NOTE_G4, NOTE_C5, NOTE_C5, NOTE_C5,
     NOTE_E4, NOTE_G4, NOTE_C5, NOTE_C5, NOTE_C5,
-    NOTE_B4, NOTE_A4, NOTE_B4, NOTE_B4,
-    NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_G4, NOTE_A4,
+    NOTE_B4, NOTE_A4, NOTE_B4, NOTE_B4, REST,
+    NOTE_G4, NOTE_G4, NOTE_A4, REST,
+    NOTE_A4, NOTE_G4, NOTE_A4, REST,
 
-    NOTE_E4, NOTE_E4, NOTE_G4, NOTE_G4, NOTE_G4, NOTE_G4, NOTE_E4, NOTE_C5, NOTE_A4,
-    NOTE_E4, NOTE_E4, NOTE_G4, NOTE_G4, NOTE_G4, NOTE_E4, NOTE_C5, NOTE_A4,
-    NOTE_A4, NOTE_A4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_C5,
-    NOTE_C5, NOTE_C5, NOTE_D5, NOTE_D5, NOTE_D5, NOTE_D5, NOTE_F5, NOTE_E5, NOTE_D5,
-    NOTE_G4, NOTE_G4, NOTE_E5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_B4, NOTE_B4,
-    NOTE_B4, NOTE_B4, NOTE_A4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_A4, NOTE_G4,
-    NOTE_G4, NOTE_G4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_E5,
-    NOTE_D5, NOTE_C5, NOTE_B4, NOTE_C5,
+    NOTE_E4, NOTE_E4, NOTE_G4, NOTE_G4, NOTE_G4, NOTE_G4, NOTE_E4, NOTE_C5, NOTE_A4, REST,
+    NOTE_E4, NOTE_E4, NOTE_G4, NOTE_G4, NOTE_G4, NOTE_E4, NOTE_C5, NOTE_A4, REST,
+    NOTE_A4, NOTE_A4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_C5, REST,
+    NOTE_C5, NOTE_C5, NOTE_D5, NOTE_D5, NOTE_D5, NOTE_D5, NOTE_F5, NOTE_E5, NOTE_D5, REST,
+    NOTE_G4, NOTE_G4, NOTE_E5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_B4, NOTE_B4, REST,
+    NOTE_B4, NOTE_B4, NOTE_A4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_A4, NOTE_G4, REST,
+    NOTE_G4, NOTE_G4, NOTE_A4, NOTE_C5, NOTE_A4, NOTE_E5, REST,
+    NOTE_D5, NOTE_C5, NOTE_B4, NOTE_C5, REST,
     NOTE_D5, NOTE_C5, NOTE_C5, NOTE_C5,
     0
   },
@@ -238,7 +239,17 @@ const PROGMEM uint16_t defaultSongs[songNum][256] =
 };
 
 const PROGMEM uint16_t tempoList[songNum] = {
-  170, 154, 151, 120, 150
+  170, // ようこそなんとかパークへ
+  154, // 何本桜
+  151, // なんとかのなんとかリオン
+  120, // 鳥のなんとか
+  150, // 残酷なやつ
+  200, // なんとかワールド
+  123, // なんとかぴっぴはなんとかかんとか
+  143, // 翔べなにダム
+  999, // Godなんとか
+  999, // Auld Lang Syne
+  
 };
 
 const PROGMEM uint16_t noteDurations[songNum][256] =
@@ -317,6 +328,98 @@ const PROGMEM uint16_t noteDurations[songNum][256] =
     4, 4, 6, 4, 8,
     8, 8, 8, 8, 6, 4,
     0
+  },
+  // なんとかワールド
+  {
+//    NOTE_E5, NOTE_DS5, NOTE_E5,
+//    NOTE_B5, NOTE_E5, NOTE_DS5, NOTE_E5, NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_E5,
+//    NOTE_GS5, NOTE_A5, NOTE_B5,
+//    NOTE_B5, NOTE_E6, NOTE_DS6, NOTE_B5, NOTE_GS5, NOTE_A5,
+//    NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4, NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4,
+//    NOTE_FS5, NOTE_FS5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_FS5,
+//
+//    NOTE_B5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_FS5,
+//    NOTE_GS5, NOTE_E5,
+//    NOTE_GS5, NOTE_A5, NOTE_B5,
+//    NOTE_B5, NOTE_E6, NOTE_D6, NOTE_B5, NOTE_GS5, NOTE_A5,
+//
+//    NOTE_GS5, NOTE_E5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_B5, NOTE_A5,
+//    NOTE_GS5, NOTE_A5, NOTE_GS5, NOTE_E5, NOTE_B4,
+//    NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_E5, NOTE_FS5,
+//    8, 8, 4,
+//    4, 8, 4, 4, 8, 8, 4, 3,
+//    8, 8, 2,
+//    4, 4, 4, 4, 4, 4,
+//    3, 8, 4, 8, 3, 8, 4,
+//    8, 4, 8, 4, 4, 8, 4, 2,
+//
+//    8, 4, 4, 3, 4,
+//    8, 4, 4,
+//    8, 8, 2,
+//    4, 4, 4, 4, 4, 4,
+//
+//    4, 8, 6, 8, 8, 8, 6,
+//    8, 8, 8, 8, 8,
+//    8, 8, 8, 8, 4, 4, 0,
+//    0
+//    
+  },
+  // なんとかぴっぴはなんとかかんとか
+  {
+//    NOTE_GS4, NOTE_GS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_C5,
+//    NOTE_DS5, NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4,
+//    NOTE_G4, NOTE_G4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_GS4, NOTE_G4,
+//    NOTE_GS4, NOTE_G4, NOTE_GS4, NOTE_G4, NOTE_AS4, NOTE_B4, NOTE_C5,
+//    NOTE_GS4, NOTE_GS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_C5,
+//    NOTE_DS5, NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4,
+//    NOTE_DS5, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_DS5, NOTE_C5, NOTE_C5, NOTE_AS4,
+//    NOTE_GS4, NOTE_G4, NOTE_GS4, NOTE_B4, NOTE_CS5,
+//    0
+  },
+  // 翔べなにダム
+  {
+    8, 8, 8, 4, 3,
+    8, 8, 8, 4, 3,
+    8, 8, 8, 4, 3,
+    8, 8, 8, 3, 4,
+    8, 8, 1, 4,
+    8, 8, 1, 2,
+
+    8, 8, 8, 8, 8, 4, 4, 8, 4, 4,
+    8, 8, 8, 3, 8, 4, 8, 4, 4,
+    8, 8, 8, 3, 8, 8, 4, 4,
+    8, 8, 4, 8, 8, 4, 8, 8, 4, 4,
+    8, 8, 8, 3, 8, 8, 8, 3, 4,
+    8, 8, 8, 3, 8, 8, 3, 8, 4,
+    8, 8, 2, 4, 8, 4, 4,
+    8, 4, 8, 4, 4,
+    8, 8, 8, 8,
+    0
+  },
+  // Godなんとか
+  {
+//    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_A4,
+//    NOTE_G4, NOTE_G4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_A4,
+//    NOTE_G4, NOTE_G4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_C5,
+//    NOTE_A4, NOTE_C5, NOTE_C5, NOTE_A4, NOTE_C5, NOTE_D5,
+//    NOTE_A4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_F4,
+//
+//    NOTE_D4, NOTE_D4, NOTE_A4, NOTE_A4,
+//    NOTE_G4, NOTE_A4, NOTE_C5, NOTE_G4,
+//    NOTE_G4, NOTE_F4, NOTE_G4, NOTE_A4,
+//    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_A4,
+//
+//    NOTE_G4, NOTE_G4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_A4,
+//    NOTE_G4, NOTE_G4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_C5,
+//    NOTE_A4, NOTE_C5, NOTE_C5, NOTE_A4, NOTE_C5, NOTE_D5,
+//
+//    NOTE_A4, NOTE_G4, NOTE_A4, NOTE_G4, NOTE_F4,
+//    NOTE_D4, NOTE_A4, NOTE_A4,
+//    NOTE_G4, NOTE_A4, NOTE_C5, NOTE_G4,
+//    NOTE_G4, NOTE_F4,
+//
+//    NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4, NOTE_E4, NOTE_D4,
+//    0
   },
 };
 
