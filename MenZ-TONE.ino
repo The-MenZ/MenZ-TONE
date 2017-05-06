@@ -46,14 +46,14 @@ volatile int bootDigits[] = {
 const int buttonPin = 3;    // the number of the pushbutton pin
 int buttonState = 0;             // the current reading from the input pin
 
-const int upButtonPin = 4;    // the number of the pushbutton pin
+const int upButtonPin = 13;    // the number of the pushbutton pin
 int upButtonState;             // the current reading from the input pin
 int lastUpButtonState = LOW;             // the current reading from the input pin
 
 unsigned long upButtonDebounceTime = 0;  // the last time the output pin was toggled
 unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
-const int downButtonPin = 13;    // the number of the pushbutton pin
+const int downButtonPin = 4;    // the number of the pushbutton pin
 int downButtonState;             // the current reading from the input pin
 int lastDownButtonState = LOW;             // the current reading from the input pin
 unsigned long downButtonDebounceTime = 0;  // the last time the output pin was toggled
