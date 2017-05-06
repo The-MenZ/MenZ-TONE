@@ -85,23 +85,37 @@ const PROGMEM uint16_t melody[songNum][256] =
     0
   },
   // なんとかワールド
+//  {
+//    NOTE_E5, NOTE_DS5, NOTE_E5,
+//    NOTE_B5, NOTE_E5, NOTE_DS5, NOTE_E5, NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_E5,
+//    NOTE_GS5, NOTE_A5, NOTE_B5,
+//    NOTE_B5, NOTE_E6, NOTE_DS6, NOTE_B5, NOTE_GS5, NOTE_A5,
+//    NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4, NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4,
+//    NOTE_FS5, NOTE_FS5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_FS5,
+//
+//    NOTE_B5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_FS5,
+//    NOTE_GS5, NOTE_E5,
+//    NOTE_GS5, NOTE_A5, NOTE_B5,
+//    NOTE_B5, NOTE_E6, NOTE_D6, NOTE_B5, NOTE_GS5, NOTE_A5,
+//
+//    NOTE_GS5, NOTE_E5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_B5, NOTE_A5,
+//    NOTE_GS5, NOTE_A5, NOTE_GS5, NOTE_E5, NOTE_B4,
+//    NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_E5, NOTE_FS5,
+//
+//    0
+//  },
+  // Secretなんとか
   {
-    NOTE_E5, NOTE_DS5, NOTE_E5,
-    NOTE_B5, NOTE_E5, NOTE_DS5, NOTE_E5, NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_E5,
-    NOTE_GS5, NOTE_A5, NOTE_B5,
-    NOTE_B5, NOTE_E6, NOTE_DS6, NOTE_B5, NOTE_GS5, NOTE_A5,
-    NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4, NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4,
-    NOTE_FS5, NOTE_FS5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_FS5,
-
-    NOTE_B5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_FS5,
-    NOTE_GS5, NOTE_E5,
-    NOTE_GS5, NOTE_A5, NOTE_B5,
-    NOTE_B5, NOTE_E6, NOTE_D6, NOTE_B5, NOTE_GS5, NOTE_A5,
-
-    NOTE_GS5, NOTE_E5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_B5, NOTE_A5,
-    NOTE_GS5, NOTE_A5, NOTE_GS5, NOTE_E5, NOTE_B4,
-    NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_E5, NOTE_FS5,
-
+    NOTE_D5, NOTE_G5, NOTE_A5, 
+    NOTE_A5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, REST, NOTE_B5, 
+    REST, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_A5, REST, NOTE_A5, 
+    NOTE_G5, NOTE_G5, NOTE_G5, NOTE_G5, NOTE_G5, REST, NOTE_G5, REST, 
+    NOTE_D5, NOTE_D5, NOTE_D5, REST, NOTE_D5, NOTE_G5, NOTE_A5, 
+    NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_D6, 
+    REST, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_A5, NOTE_G5, 
+    NOTE_A5, NOTE_B5, NOTE_B5, REST, REST, NOTE_A5, NOTE_B5, 
+    NOTE_A5, NOTE_G5, REST, NOTE_G5, REST, REST, NOTE_A5, NOTE_B5, 
+    NOTE_A5, NOTE_G5, REST, NOTE_G5,
     0
   },
   // なんとかぴっぴはなんとかかんとか
@@ -244,7 +258,7 @@ const PROGMEM uint16_t tempoList[songNum] = {
   151, // なんとかのなんとかリオン
   120, // 鳥のなんとか
   150, // 残酷なやつ
-  200, // なんとかワールド
+  70, // Secretなんとか
   123, // なんとかぴっぴはなんとかかんとか
   143, // 翔べなにダム
   150, // Godなんとか
@@ -329,40 +343,19 @@ const PROGMEM uint16_t noteDurations[songNum][256] =
     8, 8, 8, 8, 6, 4,
     0
   },
-  // なんとかワールド
+  // Secretなんとか
   {
-//    NOTE_E5, NOTE_DS5, NOTE_E5,
-//    NOTE_B5, NOTE_E5, NOTE_DS5, NOTE_E5, NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_E5,
-//    NOTE_GS5, NOTE_A5, NOTE_B5,
-//    NOTE_B5, NOTE_E6, NOTE_DS6, NOTE_B5, NOTE_GS5, NOTE_A5,
-//    NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4, NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4,
-//    NOTE_FS5, NOTE_FS5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_FS5,
-//
-//    NOTE_B5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_FS5,
-//    NOTE_GS5, NOTE_E5,
-//    NOTE_GS5, NOTE_A5, NOTE_B5,
-//    NOTE_B5, NOTE_E6, NOTE_D6, NOTE_B5, NOTE_GS5, NOTE_A5,
-//
-//    NOTE_GS5, NOTE_E5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_B5, NOTE_A5,
-//    NOTE_GS5, NOTE_A5, NOTE_GS5, NOTE_E5, NOTE_B4,
-//    NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_E5, NOTE_FS5,
-//    8, 8, 4,
-//    4, 8, 4, 4, 8, 8, 4, 3,
-//    8, 8, 2,
-//    4, 4, 4, 4, 4, 4,
-//    3, 8, 4, 8, 3, 8, 4,
-//    8, 4, 8, 4, 4, 8, 4, 2,
-//
-//    8, 4, 4, 3, 4,
-//    8, 4, 4,
-//    8, 8, 2,
-//    4, 4, 4, 4, 4, 4,
-//
-//    4, 8, 6, 8, 8, 8, 6,
-//    8, 8, 8, 8, 8,
-//    8, 8, 8, 8, 4, 4, 0,
-//    0
-//    
+    16, 16, 16, 
+    16, 16, 16, 16, 16, 16, 16, 16, 
+    16, 16, 16, 16, 16, 16, 16, 8, 
+    16, 16, 16, 16, 16, 16, 16, 16, 
+    16, 16, 16, 16, 16, 16, 16, 
+    16, 16, 16, 16, 16, 16, 16, 16, 
+    16, 16, 16, 16, 16, 16, 16, 16, 
+    8, 16, 3, 4, 16, 16, 16, 
+    16, 16, 16, 3, 4, 16, 16, 16, 
+    16, 16, 16, 3,
+    0
   },
   // なんとかぴっぴはなんとかかんとか
   {
