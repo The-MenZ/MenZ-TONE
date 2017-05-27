@@ -2,6 +2,7 @@
 #include <avr/pgmspace.h>
 #include "pitches.h"
 #include "songs.h"
+#include <avr/sleep.h>
 
 const int PowerLedPin = 15;      // the number of the LED pin
 const int ledPin = 2;      // the number of the LED pin
@@ -68,6 +69,9 @@ int nowNote;
 int nowNoteDuration;
 int tempo;
 
+unsigned long sleepTime = 300000;
+unsigned long sleepTimeCount = millis();
+
 void ledBlink() {
   static boolean output = LOW;  // プログラム起動前に１回だけHIGH(1)で初期化される
   digitalWrite(PowerLedPin, output);      // 13番ピン(LED)に出力する(HIGH>ON LOW>OFF)
@@ -125,11 +129,15 @@ void loop() {
   int reading = digitalRead(upButtonPin);
   if (reading != lastUpButtonState) {
     upButtonDebounceTime = millis();
+    // スリープカウントリセット
+    sleepTimeCount = millis();
   }
 
   int downButtonReading = digitalRead(downButtonPin);
   if (downButtonReading != lastDownButtonState) {
     downButtonDebounceTime = millis();
+    // スリープカウントリセット
+    sleepTimeCount = millis();
   }
 
   // ボタンプッシュで曲選択
@@ -216,6 +224,8 @@ void loop() {
     // ifを何度も実行しないようにフラグを立てる
     readyTone = 0;
 
+    // スリープカウントリセット
+    sleepTimeCount = millis();
   }
 
   // OFFされて一回だけ実行
@@ -230,4 +240,12 @@ void loop() {
   lastUpButtonState = reading;
   lastDownButtonState = downButtonReading;
 
+  // スリープチェック
+  if ((millis() - sleepTimeCount) > sleepTime) {
+    for (int i = 0; i < (sizeof(anode_pins) / sizeof(anode_pins[0])); i++) {
+      digitalWrite(anode_pins[i], HIGH);
+    }
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+    sleep_mode();
+  }
 }
