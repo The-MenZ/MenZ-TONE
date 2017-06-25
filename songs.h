@@ -10,6 +10,26 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_G4, NOTE_F4, NOTE_G4,
     0
   },
+  // なんとかなんとかミッション
+  { NOTE_AS4, NOTE_DS4, NOTE_AS4, NOTE_DS4, NOTE_C5,
+    NOTE_AS4, NOTE_GS4, NOTE_G4, NOTE_F4, NOTE_DS4,
+    NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_F4, NOTE_G4,
+    NOTE_D5, NOTE_G4, NOTE_F4, NOTE_DS4, NOTE_DS4,
+    NOTE_DS4, NOTE_F4, NOTE_G4, NOTE_GS5, NOTE_G5,
+    NOTE_AS4, NOTE_AS5, NOTE_AS5, NOTE_AS5, NOTE_C5, NOTE_AS4,
+    0
+  },
+  // yryr
+  {
+    NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_DS4,
+    NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_G4, NOTE_F4,
+    NOTE_G4, NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_DS4,
+    NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_G4,
+    NOTE_F4, NOTE_G4, NOTE_DS4, NOTE_DS4, NOTE_DS4,
+    NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_DS4, NOTE_DS4,
+    NOTE_G4, NOTE_F4, NOTE_G4, NOTE_C4, NOTE_DS4, NOTE_D4, NOTE_D4, NOTE_DS4,
+    0
+  },
   // なん本桜
   {
     NOTE_D4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, REST, NOTE_A4,
@@ -22,15 +42,6 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_A4, NOTE_E4, NOTE_C4, NOTE_D4,
     0
   },
-  // Daydreamなんとか
-  // {
-  //   NOTE_G5, NOTE_GS5, NOTE_AS5, NOTE_C6, NOTE_C6, NOTE_C6, NOTE_C6,
-  //   NOTE_AS5, NOTE_AS5, NOTE_GS5, NOTE_GS5, NOTE_G5, NOTE_GS5, NOTE_G5, NOTE_F5,
-  //   NOTE_E5, NOTE_AS5, NOTE_E5, NOTE_AS5, NOTE_C6, NOTE_AS5, NOTE_GS5, NOTE_G5,
-  //   NOTE_GS5, NOTE_GS5, NOTE_GS5, NOTE_GS5, NOTE_G5, NOTE_G5, NOTE_B5, NOTE_C6,
-  //   NOTE_F5, NOTE_G5, NOTE_GS5, NOTE_G5, NOTE_E5, NOTE_GS5, NOTE_G5, NOTE_E5, NOTE_C6, NOTE_AS5,
-  //   0
-  // },
   // なんとかのなんとかリオン
   {
     NOTE_E4, NOTE_E4, NOTE_B4, NOTE_B4,
@@ -82,52 +93,6 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_F5, NOTE_F5, NOTE_AS5, NOTE_GS5, NOTE_G5, NOTE_F5, NOTE_G5,
     NOTE_G5, NOTE_AS5, NOTE_C6, NOTE_F5, NOTE_DS5,
     NOTE_AS5, NOTE_AS5, NOTE_G5, NOTE_AS5, NOTE_AS5, NOTE_C6,
-    0
-  },
-  // なんとかワールド
-//  {
-//    NOTE_E5, NOTE_DS5, NOTE_E5,
-//    NOTE_B5, NOTE_E5, NOTE_DS5, NOTE_E5, NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_E5,
-//    NOTE_GS5, NOTE_A5, NOTE_B5,
-//    NOTE_B5, NOTE_E6, NOTE_DS6, NOTE_B5, NOTE_GS5, NOTE_A5,
-//    NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4, NOTE_GS5, NOTE_E5, NOTE_E5, NOTE_B4,
-//    NOTE_FS5, NOTE_FS5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_FS5,
-//
-//    NOTE_B5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_FS5,
-//    NOTE_GS5, NOTE_E5,
-//    NOTE_GS5, NOTE_A5, NOTE_B5,
-//    NOTE_B5, NOTE_E6, NOTE_D6, NOTE_B5, NOTE_GS5, NOTE_A5,
-//
-//    NOTE_GS5, NOTE_E5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_B5, NOTE_A5,
-//    NOTE_GS5, NOTE_A5, NOTE_GS5, NOTE_E5, NOTE_B4,
-//    NOTE_E5, NOTE_FS5, NOTE_GS5, NOTE_A5, NOTE_B5, NOTE_E5, NOTE_FS5,
-//
-//    0
-//  },
-  // Secretなんとか
-  {
-    NOTE_D5, NOTE_G5, NOTE_A5, 
-    NOTE_A5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, REST, NOTE_B5, 
-    REST, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_A5, NOTE_A5, REST, NOTE_A5, 
-    NOTE_G5, NOTE_G5, NOTE_G5, NOTE_G5, NOTE_G5, REST, NOTE_G5, REST, 
-    NOTE_D5, NOTE_D5, NOTE_D5, REST, NOTE_D5, NOTE_G5, NOTE_A5, 
-    NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_D6, 
-    REST, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_B5, NOTE_A5, NOTE_G5, 
-    NOTE_A5, NOTE_B5, NOTE_B5, REST, REST, NOTE_A5, NOTE_B5, 
-    NOTE_A5, NOTE_G5, REST, NOTE_G5, REST, REST, NOTE_A5, NOTE_B5, 
-    NOTE_A5, NOTE_G5, REST, NOTE_G5,
-    0
-  },
-  // なんとかぴっぴはなんとかかんとか
-  {
-    NOTE_GS4, NOTE_GS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_C5,
-    NOTE_DS5, NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4,
-    NOTE_G4, NOTE_G4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_GS4, NOTE_G4,
-    NOTE_GS4, NOTE_G4, NOTE_GS4, NOTE_G4, NOTE_AS4, NOTE_B4, NOTE_C5,
-    NOTE_GS4, NOTE_GS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_C5,
-    NOTE_DS5, NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4,
-    NOTE_DS5, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_DS5, NOTE_C5, NOTE_C5, NOTE_AS4,
-    NOTE_GS4, NOTE_G4, NOTE_GS4, NOTE_B4, NOTE_CS5,
     0
   },
   // 翔べなにダム
@@ -254,19 +219,18 @@ const PROGMEM uint16_t defaultSongs[songNum][256] =
 
 const PROGMEM uint16_t tempoList[songNum] = {
   170, // ようこそなんとかパークへ
+  80,  // なんとかなんとかミッション
+  173, // yryr
   154, // 何本桜
   151, // なんとかのなんとかリオン
   120, // 鳥のなんとか
   150, // 残酷なやつ
-  70, // Secretなんとか
-  123, // なんとかぴっぴはなんとかかんとか
   143, // 翔べなにダム
   150, // Godなんとか
   90, // Auld Lang Syne
-  
 };
 
-const PROGMEM uint16_t noteDurations[songNum][256] =
+const PROGMEM float noteDurations[songNum][256] =
 {
   // ようこそなんとかパークへ
   {
@@ -274,6 +238,22 @@ const PROGMEM uint16_t noteDurations[songNum][256] =
     8, 8, 4, 8, 8, 8, 
     4, 4, 4, 4, 8, 8,
     8, 8, 2,
+    0
+  },
+  // なんとかなんとかミッション
+  { 5.33, 5.33, 5.33, 5.33,
+    8, 2, 16, 16, 8, 16, 16,
+    16, 8, 8, 5.33, 5.33, 5.33,
+    16, 8, 16, 16, 16, 2.67, 16,
+    16, 8, 16, 16, 16, 8, 8,
+    0
+  },
+  // yryr
+  { 4, 8, 4, 4, 4, 4, 8, 8,
+    8, 8, 8, 4, 8, 4, 4, 4,
+    4, 8, 8, 8, 8, 8, 4, 8,
+    4, 4, 4, 4, 8, 8, 8, 8,
+    8, 4, 4, 8, 4, 4,
     0
   },
   // 何本桜
@@ -342,32 +322,6 @@ const PROGMEM uint16_t noteDurations[songNum][256] =
     4, 4, 6, 4, 8,
     8, 8, 8, 8, 6, 4,
     0
-  },
-  // Secretなんとか
-  {
-    16, 16, 16, 
-    16, 16, 16, 16, 16, 16, 16, 16, 
-    16, 16, 16, 16, 16, 16, 16, 8, 
-    16, 16, 16, 16, 16, 16, 16, 16, 
-    16, 16, 16, 16, 16, 16, 16, 
-    16, 16, 16, 16, 16, 16, 16, 16, 
-    16, 16, 16, 16, 16, 16, 16, 16, 
-    8, 16, 3, 4, 16, 16, 16, 
-    16, 16, 16, 3, 4, 16, 16, 16, 
-    16, 16, 16, 3,
-    0
-  },
-  // なんとかぴっぴはなんとかかんとか
-  {
-//    NOTE_GS4, NOTE_GS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_C5,
-//    NOTE_DS5, NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4,
-//    NOTE_G4, NOTE_G4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_GS4, NOTE_G4,
-//    NOTE_GS4, NOTE_G4, NOTE_GS4, NOTE_G4, NOTE_AS4, NOTE_B4, NOTE_C5,
-//    NOTE_GS4, NOTE_GS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_C5,
-//    NOTE_DS5, NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4,
-//    NOTE_DS5, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_DS5, NOTE_C5, NOTE_C5, NOTE_AS4,
-//    NOTE_GS4, NOTE_G4, NOTE_GS4, NOTE_B4, NOTE_CS5,
-//    0
   },
   // 翔べなにダム
   {
