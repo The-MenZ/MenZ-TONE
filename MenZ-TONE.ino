@@ -1,7 +1,8 @@
 #include <TimerOne.h>
 #include <avr/pgmspace.h>
 #include "pitches.h"
-#include "songs.h"
+//#include "songs.h"
+#include "songs2.h"
 #include <avr/sleep.h>
 
 const int PowerLedPin = 15;      // the number of the LED pin

@@ -153,6 +153,7 @@ const PROGMEM uint16_t melody[songNum][256] =
 
     NOTE_D5, NOTE_C5, NOTE_A4, NOTE_A4, NOTE_F4, NOTE_G4, NOTE_F4,
     NOTE_G4, NOTE_A4, NOTE_F4, NOTE_D4, NOTE_D4, NOTE_C4, NOTE_F4,
+    0
   }
 
 };
