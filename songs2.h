@@ -49,7 +49,7 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_C5, NOTE_A4, NOTE_B4, NOTE_G4, NOTE_A4, NOTE_D5,
     NOTE_D5, NOTE_C5, NOTE_A4, NOTE_A4, NOTE_G4, NOTE_F4,
     NOTE_E4, NOTE_D4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4,
-    NOTE_D4, NOTE_C4, NOTE_D4, NOTE_D4,
+    NOTE_D4, NOTE_C4, NOTE_D4,
     0
   },
   // 君が代
@@ -63,8 +63,16 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_A4, NOTE_G4, NOTE_E4, NOTE_D4,
     0
   },
-  // 
+  // かごめかごめ
   {
+    NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_C5, NOTE_C5,
+    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4,
+    NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4, NOTE_C5, NOTE_AS4,
+    NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4,
+    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_C5,
+    NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_AS4,
+    NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4, NOTE_C5,
+    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_AS4, NOTE_C5,
     0
   },
   // 通りゃんせ
@@ -113,15 +121,15 @@ const PROGMEM uint16_t melody[songNum][256] =
 
 const PROGMEM uint16_t tempoList[songNum] = {
   120, // パーパパパッパパッパ
-  100, // チャルメラ
-  100, // きらきら星
-  98,  // 遠き山に日は落ちて
-  100, // 赤い靴
-  120, // scarborough fair
-  60,  // 君が代
-  100, // 
-  100, // 通りゃんせ
-  80, // Auld Lang Syne
+  120, // チャルメラ
+  120, // きらきら星
+  110,  // 遠き山に日は落ちて
+  120, // 赤い靴
+  140, // scarborough fair
+  80,  // 君が代
+  120, // かごめかごめ
+  120, // 通りゃんせ
+  90, // Auld Lang Syne
 };
 
 const PROGMEM float noteDurations[songNum][256] =
@@ -166,7 +174,7 @@ const PROGMEM float noteDurations[songNum][256] =
     2, 4, 2, 4, 2.67, 8, 4, 1.33,
     4, 4, 4, 2, 4, 4, 4, 4, 1.33,
     2, 4, 2, 4, 4, 4, 4, 1.33,
-    2, 4, 2, 4, 4, 4, 4, 2, 8,
+    2, 4, 2, 4, 4, 4, 4, 2,
     0
   },
   // 君が代
@@ -179,8 +187,16 @@ const PROGMEM float noteDurations[songNum][256] =
     4, 4, 4, 8, 8, 2,
     0
   },
-  // 
+  // かごめかごめ
   {
+    4, 8, 8, 8, 8, 4, 8,
+    16, 16, 8, 16, 16, 8,
+    16, 16, 4, 8, 8, 8, 8,
+    8, 16, 16, 4, 8, 8, 8,
+    8, 8, 8, 4, 8, 16, 16,
+    8, 16, 16, 8, 16, 16,
+    4, 16, 16, 16, 16, 8,
+    8, 5.33, 16, 8,
     0
   },
   // 通りゃんせ
