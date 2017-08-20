@@ -15,12 +15,14 @@
 指一本残ってれば演奏できるぞ！<br>
 
 <br clear="all">
+
 ### 特徴 ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_circuit.png" width="50%" align="right" alt="MenZ-TONE回路図">
 1鍵盤だけで曲を奏でる！<br>
 それっぽいタイミングでキーを押していけば Arduino が勝手に演奏！<br>
 
 <br clear="all">
+
 ### どうやって作るの？ ###
 
 ###### 1. 必要なハードウェアを揃えましょう  
@@ -54,6 +56,7 @@ MIDIからMMLに変換するには 3ML EDITOR 2 が便利です<br>
 http://3ml.jp/
  
 <br clear="all">
+
 ### どうやって連絡すれば良い？ ###
 
 * http://www.the-menz.com/contact.html
