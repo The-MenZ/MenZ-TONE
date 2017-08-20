@@ -9,16 +9,16 @@
 
 ### これは何？ ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_real.jpg" width="50%" align="right" alt="MenZ-TONE実物">
-<p>世界最小の音ゲーマシン！</p>
+世界最小の音ゲーマシン！<br>
 ボタン一つに、圧電ブザー、スコアは自分の満足感！<br>
-楽器が何もできないのに、音楽を演奏したいヤツ必見！
-指一本残ってれば演奏できるぞ！
+楽器が何もできないのに、音楽を演奏したいヤツ必見！<br>
+指一本残ってれば演奏できるぞ！<br>
 
 <br clear="all">
 ### 特徴 ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_circuit.png" width="50%" align="right" alt="MenZ-TONE回路図">
-1鍵盤だけで曲を奏でる！
-それっぽいタイミングでキーを押していけば Arduino が勝手に演奏！
+1鍵盤だけで曲を奏でる！<br>
+それっぽいタイミングでキーを押していけば Arduino が勝手に演奏！<br>
 
 <br clear="all">
 ### どうやって作るの？ ###
@@ -42,13 +42,13 @@
 
 ### 他の曲は無いの？ ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_kit.jpg" width="50%" align="right" alt="MenZ-TONE回路図">
-songs.hに自動演奏データや曲データが入っています
-これを書き換えてArduinoに書き込みましょう
-
-MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました
+songs.hに自動演奏データや曲データが入っています<br>
+これを書き換えてArduinoに書き込みましょう<br>
+ 
+MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました<br>
 http://www.the-menz.com/mml2tone.html
  
-MIDIからMMLに変換するには 3ML EDITOR 2 が便利です
+MIDIからMMLに変換するには 3ML EDITOR 2 が便利です<br>
 http://3ml.jp/
 
 <br clear="all">
