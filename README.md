@@ -47,13 +47,10 @@
 MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました<br>
 http://www.the-menz.com/mml2tone.html <br>
  <br>
- <br>
 songs.hに自動演奏データや曲データが入っています<br>
 これを書き換えてArduinoに書き込みましょう<br>
  <br>
- <br>
 MIDI -> MML -> TONE の流れでMIDIからTONEに自動演奏&曲データを流し込めます<br>
- <br>
  <br>
 MIDIからMMLに変換するには 3ML EDITOR 2 が便利です<br>
 http://3ml.jp/
