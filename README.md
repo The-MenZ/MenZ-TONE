@@ -9,7 +9,7 @@
 
 ### これは何？ ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_real.jpg" width="50%" align="right" alt="MenZ-TONE実物">
-世界最小の音ゲーマシン！ 
+世界最小の音ゲーマシン！
 ボタン一つに、圧電ブザー、スコアは自分の満足感！
 楽器が何もできないのに、音楽を演奏したいヤツ必見！
 指一本残ってれば演奏できるぞ！
@@ -47,7 +47,7 @@ songs.hに自動演奏データや曲データが入っています
 
 MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました
 http://www.the-menz.com/mml2tone.html
-
+ 
 MIDIからMMLに変換するには 3ML EDITOR 2 が便利です
 http://3ml.jp/
 
