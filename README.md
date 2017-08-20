@@ -25,13 +25,13 @@
 
 ### 他の曲は無いの？ ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_kit.jpg" width="50%" align="right" alt="MenZ-TONE回路図">
+MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました<br>
+http://www.the-menz.com/mml2tone.html <br>
+ <br>
 songs.hに自動演奏データや曲データが入っています<br>
 これを書き換えてArduinoに書き込みましょう<br>
-<br>
-MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました<br>
-http://www.the-menz.com/mml2tone.html
-MIDI -> MML -> TONE の流れでMIDIからTONEに自動演奏&曲データを流し込めます<br>
  <br>
+MIDI -> MML -> TONE の流れでMIDIからTONEに自動演奏&曲データを流し込めます<br>
  <br>
 MIDIからMMLに変換するには 3ML EDITOR 2 が便利です<br>
 http://3ml.jp/
