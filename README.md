@@ -16,7 +16,7 @@
 
 <br clear="all">
 ### 特徴 ###
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_circuit.png" width="50%" align="right" alt="MenZ-TONE実物">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_circuit.png" width="50%" align="right" alt="MenZ-TONE回路図">
 1鍵盤だけで曲を奏でる！  
 それっぽいタイミングでキーを押していけば Arduino が勝手に演奏！
 
@@ -40,6 +40,18 @@
 
 ###### 3. Arduinoにプログラムファイルを書き込み、タクトスイッチを押して見ましょう！
 
+### 他の曲は無いの？ ###
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_kit.jpg" width="50%" align="right" alt="MenZ-TONE回路図">
+songs.hに自動演奏データや曲データが入っています  
+これを書き換えてArduinoに書き込みましょう  
+
+MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました  
+http://www.the-menz.com/mml2tone.html
+
+MIDIからMMLに変換するには 3ML EDITOR 2 が便利です  
+http://3ml.jp/
+
+<br clear="all">
 ### どうやって連絡すれば良い？ ###
 
 * http://www.the-menz.com/contact.html
