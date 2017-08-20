@@ -5,15 +5,22 @@
 |:---:|:---:|:---:|
 |6歳児用知育セット並！|指一本残ってればOK！|ポケットサイズ！|
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f3aGDDzvwAQ" frameborder="0" allowfullscreen></iframe>
+
 ### これは何？ ###
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_real.jpg" width="50%" align="right" alt="MenZ-TONE実物">
+世界最小の音ゲーマシン！  
+ボタン一つに、圧電ブザー、スコアは自分の満足感！  
+楽器が何もできないのに、音楽を演奏したいヤツ必見！  
+指一本残ってれば演奏できるぞ！  
 
-楽器は何もできないけど、音楽を演奏したい人必見！ 
-指一本あれば演奏できる！
-
+<br clear="all">
 ### 特徴 ###
-1鍵盤だけで曲を奏でる！ 
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_circuit.png" width="50%" align="right" alt="MenZ-TONE実物">
+1鍵盤だけで曲を奏でる！  
 それっぽいタイミングでキーを押していけば Arduino が勝手に演奏！
 
+<br clear="all">
 ### どうやって作るの？ ###
 
 ###### 1. 必要なハードウェアを揃えましょう  
@@ -35,5 +42,4 @@
 
 ### どうやって連絡すれば良い？ ###
 
-* https://twitter.com/The_MenZ3
-* https://www.facebook.com/TheMenZ3/
+* http://www.the-menz.com/contact.html
