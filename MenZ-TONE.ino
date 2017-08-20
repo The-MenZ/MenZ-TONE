@@ -1,7 +1,8 @@
 #include <TimerOne.h>
 #include <avr/pgmspace.h>
 #include "pitches.h"
-#include "songs.h"
+//#include "songs.h"
+#include "songs2.h"
 #include <avr/sleep.h>
 
 const int PowerLedPin = 15;      // the number of the LED pin
@@ -168,12 +169,12 @@ void loop() {
     Serial.println("DEBUG DEBUG DEBUG autoPlay: ");
     nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
     tempo = pgm_read_word(&tempoList[currentSong]);
-    nowNoteDuration = pgm_read_word(&noteDurations[currentSong][currentPosition]);
+    nowNoteDuration = pgm_read_float(&noteDurations[currentSong][currentPosition]);
     Serial.print("tempo: ");
     Serial.println(tempo);
     Serial.print("nowNoteDuration: ");
     Serial.println(nowNoteDuration);
-    nowNoteDuration = (int)((240000 / tempo) / nowNoteDuration);
+    nowNoteDuration = (int)(((60000 / tempo) * 4)/ nowNoteDuration);
     // 最後の音まで来たらリセット
     if(nowNote == 0) {
       Serial.print("if currentPosition: ");
