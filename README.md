@@ -63,13 +63,62 @@ http://3ml.jp/
 <br clear="all">
 
 #### MIDIからMMLに変換する ####
-工事中
+
+1. 3ML EDITOR 2を開きます
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_3mleditor.jpg" width="20%">
+
+2. MIDIファイルを開きます
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_openmidi.jpg" width="20%">
+
+3. MIDIファイルで開くトラックを選択します
+
+   気になる人以外はこのままOKを押してください
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_midiconfig.jpg" width="20%">
+
+4. Tempoの部分にある数字をメモっておきます
+
+   例では100となっています
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_tempo.jpg" width="20%">
+
+5. メロディ部分のスコアを開き、必要な部分だけ切り取ります
+
+   例では3小節途中で切りました
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_score.jpg" width="200px" align="left">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_trimscore.jpg" width="200px">
+
+6. テンポを追加し、MenZ-TONEで読み込ませるためにコメントや改行を削除し1行にします
+
+   テンポは100なので、MMLの先頭にt100を書きます
+   1行にしたものをこのあとの作業に使用しますので、メモっておきます
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_addtempo.jpg" width="20%">
+
+<br clear="all">
 
 #### MMLからMenZ-TONEの形式に変換する ####
-工事中
+
+1. 3ML EDITOR 2で仕込んだMMLをMML2TONEのテキストボックスに入れてconvert!ボタンを押します
+
+   以下の3つの情報がでてきますので、これをこのあとの作業に使います。
+
+   1. テンポ
+   2. 配列形式の楽譜
+   3. 配列形式の音符の長さ
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_mml3tone.png" width="20%">
+
+<br clear="all">
 
 #### 曲をプログラムに追加する ####
 工事中
+
+<br clear="all">
+
 
 #### プログラムを書き込み、曲を確認する ####
 
