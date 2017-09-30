@@ -24,11 +24,8 @@
 <br clear="all">
 
 ### 内容物 ###
-<div style="float: left; width: 45%; padding: 45px">
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_contents.JPG" alt="MenZ-TONE内容物">
-</div>
 <br>
-<div style="float: right;">
 
 |名前|個数|備考|
 |:---:|:---:|:---:|
@@ -47,8 +44,6 @@
 |発光ダイオード|1|演奏スイッチ用|
 |7セグメントLED|1|アノードコモン|
 |圧電ブザー|1||
-
-</div>
 
 <br clear="all">
 
