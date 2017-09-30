@@ -90,6 +90,8 @@ http://3ml.jp/
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_score.jpg" width="200px" align="left">
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_trimscore.jpg" width="200px">
+<br>
+
 
 6. テンポを追加し、MenZ-TONEで読み込ませるためにコメントや改行を削除し1行にします
 
