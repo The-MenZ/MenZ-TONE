@@ -73,15 +73,19 @@ http://3ml.jp/
 
 #### プログラムを書き込み、曲を確認する ####
 
+** この作業はArduinoやMenZ-TONEの故障につながる可能性があります **
+<br>
+** 自己の責任において作業を行ってください **
+
 1. ArduinoとMenZ-TONEからAVRを外す
 
    ソケットとAVRの間にマイナスドライバを差し込み、少し持ち上げます。<br>
    これをAVR両端で交互に行い、徐々にAVRを持ち上げソケットから外します。<br>
    ソケットからAVRを外すときは、足を曲げないように注意しながら外してください。<br>
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove1.JPG" width="20%">
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove2.JPG" width="20%">
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove3.JPG" width="20%">
+![](https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove1.JPG | width=200 )
+![](https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove2.JPG | width=200 )
+![](https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove3.JPG | width=200 )
 
 2. MenZ-TONEから外したAVRをArudinoに取り付ける
 
@@ -99,6 +103,7 @@ http://3ml.jp/
 4. 動作確認
 
    Arduinoに取り付けたAVRをMenZ-TONEに戻して動作を確認します。
+   このときも、ICソケットの切り欠きとAVRの切り欠きの位置を十分注意して差し込みましょう。
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_run.JPG" width="30%">
 
