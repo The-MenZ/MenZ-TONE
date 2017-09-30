@@ -135,7 +135,7 @@ http://3ml.jp/
 4. 音符の長さを置き換えます（左：変更前、右：変更後）
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_length.png" align="left">
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_length_change.png">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/8e4a96d7174a7a30811a7478213c7fccfa547603/photo/MenZ-TONE_length_change.png">
 
 <br clear="all">
 
