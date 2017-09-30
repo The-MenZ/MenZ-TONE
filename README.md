@@ -83,9 +83,9 @@ http://3ml.jp/
    これをAVR両端で交互に行い、徐々にAVRを持ち上げソケットから外します。<br>
    ソケットからAVRを外すときは、足を曲げないように注意しながら外してください。<br>
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove1.JPG" width="20%" style="display: inline">
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove2.JPG" width="20%" style="display: inline">
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove3.JPG" width="20%" style="display: inline">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove1.JPG" width="20%" align="left">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove2.JPG" width="20%" align="left">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove3.JPG" width="20%">
 
 2. MenZ-TONEから外したAVRをArudinoに取り付ける
 
