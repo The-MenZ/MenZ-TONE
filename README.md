@@ -130,9 +130,10 @@ http://3ml.jp/
 3. テンポを置き換えます（左：変更前、右：変更後）
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/eb2721cc86852d9137bde1473b83cffd58a12677/photo/MenZ-TONE_tempo.png" align="left">
-<img src="https://github.com/The-MenZ/MenZ-TONE/blob/eb2721cc86852d9137bde1473b83cffd58a12677/photo/MenZ-TONE_tempo_change.png?raw=true">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/eb2721cc86852d9137bde1473b83cffd58a12677/photo/MenZ-TONE_tempo_change.png">
 <br>
 <br>
+
 
 4. 音符の長さを置き換えます（左：変更前、右：変更後）
 
