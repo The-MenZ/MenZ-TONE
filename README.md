@@ -117,10 +117,27 @@ http://3ml.jp/
 <br clear="all">
 
 #### 曲をプログラムに追加する ####
-工事中
+
+例では、song2.hの1曲目を変更します。
+
+1. ヘッダファイルを開きます
+
+2. 楽譜を置き換えます（左：変更前、右：変更後）
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_scorecode.png" align="left">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_scorecode_change.png">
+
+3. テンポを置き換えます（左：変更前、右：変更後）
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_tempo.png" align="left">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_tempo_change.png">
+
+4. 音符の長さを置き換えます（左：変更前、右：変更後）
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_length.png" align="left">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_length_change.png">
 
 <br clear="all">
-
 
 #### プログラムを書き込み、曲を確認する ####
 
