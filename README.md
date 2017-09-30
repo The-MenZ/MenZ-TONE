@@ -182,6 +182,13 @@ http://3ml.jp/
 
 <br clear="all">
 
+### 参考URL ###
+
+* [Wikipedia - Music Macro Language](https://ja.wikipedia.org/wiki/Music_Macro_Language)
+   - とりあえず基礎的なことを学びましょう
+* [マビノギ MML作曲ツール 3ML EDITOR 2 Webpage](http://3ml.jp/)
+   - かなりお世話になっているツールですこれがないと始まりません
+
 ### どうやって連絡すれば良い？ ###
 
 * http://www.the-menz.com/contact.html
