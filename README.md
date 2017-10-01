@@ -95,7 +95,7 @@ http://3ml.jp/
    テンポは100なので、MMLの先頭にt100を書きます
    1行にしたものをこのあとの作業に使用しますので、メモっておきます
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_addtempo.jpg" width="430px">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_addtempo.jpg">
 
 <br clear="all">
 
