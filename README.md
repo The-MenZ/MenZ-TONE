@@ -73,13 +73,13 @@ http://3ml.jp/
 
    気になる人以外はこのままOKを押してください
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_midiconfig.jpg" width="430px">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/a3f341c478608d9ff0e374d6dd382beaa2d9c14f/photo/MenZ-TOME_midiconfig.jpg">
 
 4. Tempoの部分にある数字をメモっておきます
 
    例では100となっています
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_tempo.jpg" width="430px">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/a3f341c478608d9ff0e374d6dd382beaa2d9c14f/photo/MenZ-TONE_tempo.jpg">
 
 5. メロディ部分のスコアを開き、必要な部分だけ切り取ります
 
