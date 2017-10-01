@@ -64,32 +64,29 @@ http://3ml.jp/
 
 #### MIDIからMMLに変換する ####
 
-1. 3ML EDITOR 2を開きます
+1. 3ML EDITOR 2でMIDIファイルを開きます
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_3mleditor.jpg" width="20%">
-
-2. MIDIファイルを開きます
-
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_openmidi.jpg" width="20%">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_3mleditor.jpg" width="450px" align="left">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_openmidi.jpg" width="450px">
 
 3. MIDIファイルで開くトラックを選択します
 
    気になる人以外はこのままOKを押してください
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_midiconfig.jpg" width="20%">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_midiconfig.jpg" width="450px">
 
 4. Tempoの部分にある数字をメモっておきます
 
    例では100となっています
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_tempo.jpg" width="20%">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_tempo.jpg" width="450px">
 
 5. メロディ部分のスコアを開き、必要な部分だけ切り取ります
 
    例では3小節途中で切りました
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_score.jpg" width="200px" align="left">
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_trimscore.jpg" width="200px">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_score.jpg" width="450px" align="left">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_trimscore.jpg" width="450px">
 <br>
 
 
@@ -98,7 +95,7 @@ http://3ml.jp/
    テンポは100なので、MMLの先頭にt100を書きます
    1行にしたものをこのあとの作業に使用しますので、メモっておきます
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_addtempo.jpg" width="20%">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_addtempo.jpg" width="450px">
 
 <br clear="all">
 
@@ -112,7 +109,7 @@ http://3ml.jp/
    2. 配列形式の楽譜
    3. 配列形式の音符の長さ
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_mml3tone.png" width="20%">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_mml3tone.png">
 
 <br clear="all">
 
