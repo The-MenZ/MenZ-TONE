@@ -47,6 +47,24 @@
 
 <br clear="all">
 
+### 使用する工具 ###
+
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_tool.JPG" width="50%" align="right" alt="使用する工具">
+
+（左から）
+
+1. ハンダコテ
+2. ハンダ
+
+   はんだ付けには上2つが必須！
+
+3. ニッパー
+
+   はんだ付けしたあとの部品の足をこれで切り取ろう！
+
+
+<br clear="all">
+
 ### 他の曲は無いの？ ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_kit.jpg" width="50%" align="right" alt="MenZ-TONE回路図">
 MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました<br>
