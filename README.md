@@ -115,7 +115,8 @@ http://3ml.jp/
 5. MMLを全て削除してコピーしたMMLを貼り付けた後、コメントや改行を削除し1行にして、先頭にテンポを追加します
 
    テンポは100なので、MMLの先頭にt100を書きます
-   1行にしたものをこのあとの作業に使用しますので、メモっておきます
+
+   1行にしたものをこのあとの作業に使用しますので、コピーしておきます
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TOME_addtempo.jpg">
 
@@ -123,7 +124,7 @@ http://3ml.jp/
 
 #### MMLからMenZ-TONEの形式に変換する ####
 
-1. 3ML EDITOR 2で仕込んだMMLをMML2TONEのテキストボックスに入れてconvert!ボタンを押します
+1. 3ML EDITOR 2で仕込んだMMLを[MML2TONE](https://www.the-menz.com/mml2tone.html)のテキストボックスに入れてconvert!ボタンを押します
 
    以下の3つの情報がでてきますので、これをこのあとの作業に使います。
 
