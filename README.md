@@ -94,19 +94,19 @@ http://3ml.jp/
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_3mleditor.jpg" width="430px" align="left">
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_openmidi.jpg" width="430px">
 
-3. MIDIファイルで開くトラックを選択します
+2. MIDIファイルで開くトラックを選択します
 
    気になる人以外はこのままOKを押してください
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/a3f341c478608d9ff0e374d6dd382beaa2d9c14f/photo/MenZ-TOME_midiconfig.jpg">
 
-4. Tempoの部分にある数字をメモっておきます
+3. Tempoの部分にある数字をメモっておきます
 
    例では100となっています
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/a3f341c478608d9ff0e374d6dd382beaa2d9c14f/photo/MenZ-TONE_tempo.jpg">
 
-5. メロディ部分のスコアを開き、必要な部分だけ切り取ります
+4. メロディ部分のスコアを開き、必要な部分だけ切り取ります
 
    例では3小節途中で切りました
 
@@ -115,7 +115,7 @@ http://3ml.jp/
 <br>
 
 
-6. テンポを追加し、MenZ-TONEで読み込ませるためにコメントや改行を削除し1行にします
+5. テンポを追加し、MenZ-TONEで読み込ませるためにコメントや改行を削除し1行にします
 
    テンポは100なので、MMLの先頭にt100を書きます
    1行にしたものをこのあとの作業に使用しますので、メモっておきます
