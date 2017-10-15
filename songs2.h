@@ -42,14 +42,13 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_G4, NOTE_G4, NOTE_C4,
     0
   },
-  // scarborough fair
+  // かえるのうた
   {
-    NOTE_D4, NOTE_D4, NOTE_A4, NOTE_A4, NOTE_E4, NOTE_F4,
-    NOTE_E4, NOTE_D4, NOTE_D3, NOTE_A4, NOTE_C5, NOTE_D5,
-    NOTE_C5, NOTE_A4, NOTE_B4, NOTE_G4, NOTE_A4, NOTE_D5,
-    NOTE_D5, NOTE_C5, NOTE_A4, NOTE_A4, NOTE_G4, NOTE_F4,
-    NOTE_E4, NOTE_D4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_E4,
-    NOTE_D4, NOTE_C4, NOTE_D4,
+    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_AS4, NOTE_A4, NOTE_G4, 
+    NOTE_F4, NOTE_A4, NOTE_AS4, NOTE_C5, NOTE_D5, NOTE_C5, 
+    NOTE_AS4, NOTE_A4, NOTE_F4, NOTE_F4, NOTE_F4, NOTE_F4, 
+    NOTE_F4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, 
+    NOTE_AS4, NOTE_AS4, NOTE_A4, NOTE_G4, NOTE_F4, 
     0
   },
   // 君が代
@@ -61,18 +60,6 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_A4, NOTE_G4, NOTE_E4, NOTE_G4, NOTE_D4, NOTE_A4,
     NOTE_C5, NOTE_D5, NOTE_C5, NOTE_D5, NOTE_A4, NOTE_G4,
     NOTE_A4, NOTE_G4, NOTE_E4, NOTE_D4,
-    0
-  },
-  // かごめかごめ
-  {
-    NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_C5, NOTE_C5,
-    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4,
-    NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4, NOTE_C5, NOTE_AS4,
-    NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4,
-    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_C5,
-    NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_AS4,
-    NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4, NOTE_C5,
-    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_AS4, NOTE_C5,
     0
   },
   // 通りゃんせ
@@ -87,18 +74,30 @@ const PROGMEM uint16_t melody[songNum][256] =
     NOTE_E4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_F4,
     NOTE_F4, NOTE_F4, NOTE_A4, NOTE_A4, NOTE_F4,
     NOTE_E4, NOTE_F4, NOTE_E4, NOTE_D4, NOTE_D4,
-    NOTE_E4, NOTE_AS4, NOTE_AS4, NOTE_AS4, NOTE_AS4,
-    NOTE_D5, NOTE_D5, NOTE_AS4, NOTE_A4, NOTE_AS4,
-    NOTE_A4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_F4,
-    NOTE_F4, NOTE_F4, NOTE_F4, NOTE_F4, NOTE_F4,
-    NOTE_A4, NOTE_F4, NOTE_E4, NOTE_F4, NOTE_E4,
-    NOTE_D4, NOTE_D4, NOTE_E4, NOTE_E4, NOTE_A4,
-    NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4,
-    NOTE_G4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_G4,
-    NOTE_D4, NOTE_D4, NOTE_E4, NOTE_D4, NOTE_E4,
-    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_AS4, NOTE_A4,
-    NOTE_AS4, NOTE_D5, NOTE_E5, NOTE_D5, NOTE_AS4,
-    NOTE_A4, NOTE_A4, NOTE_G4, NOTE_A4,
+    NOTE_E4, //NOTE_AS4, NOTE_AS4, NOTE_AS4, NOTE_AS4,
+//    NOTE_D5, NOTE_D5, NOTE_AS4, NOTE_A4, NOTE_AS4,
+//    NOTE_A4, NOTE_G4, NOTE_G4, NOTE_A4, NOTE_F4,
+//    NOTE_F4, NOTE_F4, NOTE_F4, NOTE_F4, NOTE_F4,
+//    NOTE_A4, NOTE_F4, NOTE_E4, NOTE_F4, NOTE_E4,
+//    NOTE_D4, NOTE_D4, NOTE_E4, NOTE_E4, NOTE_A4,
+//    NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4,
+//    NOTE_G4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_G4,
+//    NOTE_D4, NOTE_D4, NOTE_E4, NOTE_D4, NOTE_E4,
+//    NOTE_F4, NOTE_G4, NOTE_A4, NOTE_AS4, NOTE_A4,
+//    NOTE_AS4, NOTE_D5, NOTE_E5, NOTE_D5, NOTE_AS4,
+//    NOTE_A4, NOTE_A4, NOTE_G4, NOTE_A4,
+    0
+  },
+  // かごめかごめ
+  {
+    NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_C5, NOTE_C5,
+    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4,
+    NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4, NOTE_C5, NOTE_AS4,
+    NOTE_C5, NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4,
+    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_C5,
+    NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_C5, NOTE_AS4,
+    NOTE_AS4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_G4, NOTE_C5,
+    NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_AS4, NOTE_C5,
     0
   },
   // Auld Lang Syne
@@ -125,10 +124,10 @@ const PROGMEM uint16_t tempoList[songNum] = {
   120, // きらきら星
   110,  // 遠き山に日は落ちて
   120, // 赤い靴
-  140, // scarborough fair
+  76, // かえるのうた
   80,  // 君が代
-  120, // かごめかごめ
-  120, // 通りゃんせ
+  110, // 通りゃんせ
+  110, // かごめかごめ
   90, // Auld Lang Syne
 };
 
@@ -169,12 +168,12 @@ const PROGMEM float noteDurations[songNum][256] =
     4, 4, 4, 4, 4, 4, 4, 4, 1,
     0
   },
-  // scarborough fair
-  {
-    2, 4, 2, 4, 2.67, 8, 4, 1.33,
-    4, 4, 4, 2, 4, 4, 4, 4, 1.33,
-    2, 4, 2, 4, 4, 4, 4, 1.33,
-    2, 4, 2, 4, 4, 4, 4, 2,
+  // かえるのうた
+  { 
+    8, 8, 8, 8, 8, 8, 4, 8, 8, 
+    8, 8, 8, 8, 4, 4, 4, 4, 4, 
+    16, 16, 16, 16, 16, 16, 16, 
+    16, 8, 8, 4, 
     0
   },
   // 君が代
@@ -187,6 +186,26 @@ const PROGMEM float noteDurations[songNum][256] =
     4, 4, 4, 8, 8, 2,
     0
   },
+  // 通りゃんせ
+  {
+    2, 4, 4, 4, 8, 8, 2,
+    4, 8, 8, 4, 8, 8, 8,
+    8, 8, 8, 2, 4, 4, 8,
+    8, 8, 8, 8, 8, 8, 8,
+    2, 2.67, 8, 4, 8, 8,
+    8, 8, 8, 8, 2, 8, 4,
+    8, 8, 8, 8, 8, 8, 8,
+    8, 8, 2, //8, 8, 8, 8,
+//    8, 8, 8, 8, 8, 8, 8,
+//    8, 2.67, 8, 8, 8, 8,
+//    8, 8, 8, 8, 8, 8, 8,
+//    8, 8, 2, 8, 8, 8, 8,
+//    8, 8, 8, 8, 8, 8, 8,
+//    8, 8, 8, 2.67, 8, 8,
+//    8, 8, 8, 8, 8, 4, 4,
+//    8, 8, 4, 4, 8, 8, 2,
+    0
+  },
   // かごめかごめ
   {
     4, 8, 8, 8, 8, 4, 8,
@@ -197,26 +216,6 @@ const PROGMEM float noteDurations[songNum][256] =
     8, 16, 16, 8, 16, 16,
     4, 16, 16, 16, 16, 8,
     8, 5.33, 16, 8,
-    0
-  },
-  // 通りゃんせ
-  {
-    2, 4, 4, 4, 8, 8, 2,
-    4, 8, 8, 4, 8, 8, 8,
-    8, 8, 8, 2, 4, 4, 8,
-    8, 8, 8, 8, 8, 8, 8,
-    2, 2.67, 8, 4, 8, 8,
-    8, 8, 8, 8, 2, 8, 4,
-    8, 8, 8, 8, 8, 8, 8,
-    8, 8, 2, 8, 8, 8, 8,
-    8, 8, 8, 8, 8, 8, 8,
-    8, 2.67, 8, 8, 8, 8,
-    8, 8, 8, 8, 8, 8, 8,
-    8, 8, 2, 8, 8, 8, 8,
-    8, 8, 8, 8, 8, 8, 8,
-    8, 8, 8, 2.67, 8, 8,
-    8, 8, 8, 8, 8, 4, 4,
-    8, 8, 4, 4, 8, 8, 2,
     0
   },
   // Auld Lang Syne
