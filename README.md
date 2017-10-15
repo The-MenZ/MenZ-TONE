@@ -91,12 +91,12 @@ http://3ml.jp/
 
 1. 3ML EDITOR 2でMIDIファイルを開きます
 
+   「ファイル」＞「標準MIDIファイルを入力」を選択して、ファイルを開きます
+
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_3mleditor.jpg" width="430px" align="left">
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_openmidi.jpg" width="430px">
 
-2. MIDIファイルで開くトラックを選択します
-
-   気になる人以外はこのままOKを押してください
+2. 「インポート設定」の画面でOKをクリックします。
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/a3f341c478608d9ff0e374d6dd382beaa2d9c14f/photo/MenZ-TOME_midiconfig.jpg">
 
@@ -104,18 +104,15 @@ http://3ml.jp/
 
    例では100となっています
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/a3f341c478608d9ff0e374d6dd382beaa2d9c14f/photo/MenZ-TONE_tempo.jpg">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_tempo.jpg">
 
-4. メロディ部分のスコアを開き、必要な部分だけ切り取ります
+4. メロディ部分のスコアを開き、使いたい部分のメロディーを選択してコピーします
 
-   例では3小節途中で切りました
+   例では3小節途中までを選択しました
 
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_score.jpg" width="430px" align="left">
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_trimscore.jpg" width="430px">
-<br>
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_score.jpg">
 
-
-5. テンポを追加し、MenZ-TONEで読み込ませるためにコメントや改行を削除し1行にします
+5. MMLを全て削除してコピーしたMMLを貼り付けた後、コメントや改行を削除し1行にして、先頭にテンポを追加します
 
    テンポは100なので、MMLの先頭にt100を書きます
    1行にしたものをこのあとの作業に使用しますので、メモっておきます
