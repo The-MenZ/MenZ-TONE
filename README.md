@@ -26,7 +26,8 @@ ArduinoUNO を使えば MIDI や MML からコンバートして好きな曲を�
 <br clear="all">
 
 ### 内容物 ###
-<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/e60dfb00fbc16afa9d4a3ec3e0ca0d44dbfe4d77/photo/MenZ-TONE_contents.JPG" width="40%" align="right" alt="MenZ-TONE内容物">
+<img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/e60dfb00fbc16afa9d4a3ec3e0ca0d44dbfe4d77/photo/MenZ-TONE_contents.JPG" alt="MenZ-TONE内容物">
+<br>
 
 |名前|個数|備考|
 |:---:|:---:|:---:|
