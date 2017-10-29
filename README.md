@@ -31,8 +31,8 @@ ArduinoUNO を使えば MIDI や MML からコンバートして好きな曲を�
 
 |名前|個数|備考|
 |:---:|:---:|:---:|
-|基板|1|MenZ-TONE専用|
-|ATmega328P|1|MenZ-TONE書き込み済み|
+|基板|1|ゆびトーン専用|
+|ATmega328P|1|ゆびトーン書き込み済み|
 |水晶発振子|1|16MHz|
 |セラミックコンデンサ|2|22pF|
 |セラミックコンデンサ|1|0.1uF|
@@ -91,7 +91,7 @@ ArduinoUNO を使えば MIDI や MML からコンバートして好きな曲を�
 
 ### 他の曲は無いの？ ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_kit.jpg" width="50%" align="right" alt="MenZ-TONE回路図">
-MMLデータをMenZ-TONE用のデータにコンバートするツールを作りました<br>
+MMLデータをゆびトーン用のデータにコンバートするツールを作りました<br>
 http://www.the-menz.com/mml2tone.html <br>
  <br>
 songs.hに自動演奏データや曲データが入っています<br>
@@ -139,7 +139,7 @@ http://3ml.jp/
 
 <br clear="all">
 
-#### MMLからMenZ-TONEの形式に変換する ####
+#### MMLからゆびトーンの形式に変換する ####
 
 1. 3ML EDITOR 2で仕込んだMMLを[MML2TONE](https://www.the-menz.com/mml2tone.html)のテキストボックスに入れてconvert!ボタンを押します
 
@@ -181,13 +181,13 @@ http://3ml.jp/
 
 ---
 
-**この作業はArduinoやMenZ-TONEの故障につながる可能性があります**
+**この作業はArduinoや、ゆびトーンの故障につながる可能性があります**
 <br>
 **自己の責任において作業を行ってください**
 
 ---
 
-1. ArduinoとMenZ-TONEからAVRを外す
+1. ArduinoとゆびトーンからAVRを外す
 
    ソケットとAVRの間にマイナスドライバを差し込み、少し持ち上げます。<br>
    これをAVR両端で交互に行い、徐々にAVRを持ち上げソケットから外します。<br>
@@ -197,7 +197,7 @@ http://3ml.jp/
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove2.JPG" width="20%" align="left">
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_remove3.JPG" width="20%">
 
-2. MenZ-TONEから外したAVRをArudinoに取り付ける
+2. ゆびトーンから外したAVRをArudinoに取り付ける
 
    逆差しをしないよう、ICソケットとAVRの切り欠きを確認して差し込みます。<br>
    外すときのことを考え、最後まで刺さずに軽く浮かせておくと良いでしょう。<br>
@@ -212,7 +212,7 @@ http://3ml.jp/
 
 4. 動作確認
 
-   Arduinoに取り付けたAVRをMenZ-TONEに戻して動作を確認します。
+   Arduinoに取り付けたAVRをゆびトーンに戻して動作を確認します。
    このときも、ICソケットの切り欠きとAVRの切り欠きの位置を十分注意して差し込みましょう。
 
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_run.JPG" width="30%">
