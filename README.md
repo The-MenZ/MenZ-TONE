@@ -19,7 +19,9 @@
 ### 特徴 ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_circuit.png" width="50%" align="right" alt="MenZ-TONE回路図">
 1鍵盤だけで曲を奏でる！<br>
-それっぽいタイミングでキーを押していけば Arduino が勝手に演奏！<br>
+それっぽいタイミングでキーを押していけば 指トーン が勝手に演奏！<br>
+指トーンに10曲収録しています！<br>
+ArduinoUNO を使えば MIDI や MML からコンバートして好きな曲を収録することも可能！<br>
 
 <br clear="all">
 
@@ -75,6 +77,7 @@
 ### 曲リスト ###
 
 |番号|曲名|難易度（多いほど難しい）|
+|:---:|:---:|:---:|
 |0|オチに使われる効果音|☆|
 |1|チャルメラ|☆|
 |2|きらきら星|☆☆|
