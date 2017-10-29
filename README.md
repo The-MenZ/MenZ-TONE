@@ -1,4 +1,4 @@
-# MenZ-TONE #
+# ゆびトーン（開発名：MenZ-TONE） #
 ***
 
 |初心者工作|お手軽演奏|ポータブル|
@@ -19,8 +19,8 @@
 ### 特徴 ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_circuit.png" width="50%" align="right" alt="MenZ-TONE回路図">
 1鍵盤だけで曲を奏でる！<br>
-それっぽいタイミングでキーを押していけば 指トーン が勝手に演奏！<br>
-指トーンに10曲収録しています！<br>
+それっぽいタイミングでキーを押していけば ゆびトーン が勝手に演奏！<br>
+ゆびトーンに10曲収録しています！<br>
 ArduinoUNO を使えば MIDI や MML からコンバートして好きな曲を収録することも可能！<br>
 
 <br clear="all">
