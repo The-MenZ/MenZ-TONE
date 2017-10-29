@@ -5,7 +5,7 @@
 |:---:|:---:|:---:|
 |程よい難易度！|指一本でカンタン演奏！|ポケットサイズ！|
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/f3aGDDzvwAQ/0.jpg)](http://www.youtube.com/watch?v=f3aGDDzvwAQ "Youtube video")
+[![IMAGE ALT TEXT](https://img.youtube.com/vi/ij7eNtTbqwg/0.jpg)](https://www.youtube.com/watch?v=ij7eNtTbqwg "Youtube video")
 
 ### これは何？ ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_real.jpg" width="50%" align="right" alt="MenZ-TONE実物">
@@ -71,6 +71,20 @@
 * 保護者の方へ：お子様が製作を行う場合は、指導・監督や保護メガネ等の保護具等で安全を確保した上で製作をさせてください
 
 <br clear="all">
+
+### 曲リスト ###
+
+|番号|曲名|難易度（多いほど難しい）|
+|0|オチに使われる効果音|☆|
+|1|チャルメラ|☆|
+|2|きらきら星|☆☆|
+|3|遠き山に日は落ちて|☆☆|
+|4|赤い靴|☆☆|
+|5|カエルの歌|☆☆|
+|6|君が代|☆☆☆|
+|7|通りゃんせ|☆☆☆☆|
+|8|かごめかごめ|☆☆☆☆☆|
+|9|Auld Lang Syne（蛍の光）|☆☆|
 
 ### 他の曲は無いの？ ###
 <img src="https://raw.githubusercontent.com/The-MenZ/MenZ-TONE/master/photo/MenZ-TONE_kit.jpg" width="50%" align="right" alt="MenZ-TONE回路図">
