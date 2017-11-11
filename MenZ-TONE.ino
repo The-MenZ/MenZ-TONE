@@ -1,9 +1,13 @@
 #include <TimerOne.h>
 #include <avr/pgmspace.h>
-#include "pitches.h"
+// #include "mml.h"
+// #include "pitches.h"
 //#include "songs.h"
-#include "songs2.h"
+// #include "songs2.h"
 #include <avr/sleep.h>
+extern "C" {
+  #include "mml.h"
+}
 
 const int PowerLedPin = 15;      // the number of the LED pin
 const int ledPin = 2;      // the number of the LED pin
@@ -67,11 +71,14 @@ volatile int currentSong = 0;
 int currentPosition = 0;
 int readyTone = 1;
 int nowNote;
-int nowNoteDuration;
-int tempo;
+float nowNoteDuration;
 
 unsigned long sleepTime = 300000;
 unsigned long sleepTimeCount = millis();
+
+const int songNum = 10;
+
+char *testMml = (char*)"t90 l4 cdefgab c+c-b-b+ c6c6c32 o5 r c8defgab r c>d>efga<b r o4 _c_def~g~ab";
 
 void ledBlink() {
   static boolean output = LOW;  // プログラム起動前に１回だけHIGH(1)で初期化される
@@ -120,6 +127,8 @@ void setup() {
   pinMode(upButtonPin, INPUT);
   pinMode(downButtonPin, INPUT);
 
+  mml_initialize(testMml);
+
   Serial.begin(9600);
   Serial.println("Hello!! We are The-MenZ!!");
 }
@@ -167,20 +176,20 @@ void loop() {
   // 自動演奏モード
   if(autoPlay == 1){
     // Serial.println("DEBUG DEBUG DEBUG autoPlay: ");
-    nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
-    tempo = pgm_read_word(&tempoList[currentSong]);
-    nowNoteDuration = pgm_read_float(&noteDurations[currentSong][currentPosition]);
+    // nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    // tempo = pgm_read_word(&tempoList[currentSong]);
+    // nowNoteDuration = pgm_read_float(&noteDurations[currentSong][currentPosition]);
     // Serial.print("tempo: ");
 //    Serial.println(tempo);
 //    Serial.print("nowNoteDuration: ");
 //    Serial.println(nowNoteDuration);
-    nowNoteDuration = (int)(((60000 / tempo) * 4)/ nowNoteDuration);
+    // nowNoteDuration = (int)(((60000 / tempo) * 4)/ nowNoteDuration);
     // 最後の音まで来たらリセット
     if(nowNote == 0) {
 //      Serial.print("if currentPosition: ");
 //      Serial.println(currentPosition);
       currentPosition = 0;
-      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+      // nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
       autoPlay = 0;
 //      Serial.println("DEBUG DEBUG DEBUG reset: ");
     } else {
@@ -201,19 +210,19 @@ void loop() {
   // ONされて一回だけ実行
   if(buttonState == 1 && readyTone == 1){
     digitalWrite(ledPin, HIGH);
-    nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    // nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
     autoPlay = 0;
     // 1はスキップ
     if(nowNote == 1){
       currentPosition++;
-      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+      // nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
     }
     // 最後の音まで来たらリセット
     if(nowNote == 0){
 //      Serial.print("if currentPosition: ");
 //      Serial.println(currentPosition);
       currentPosition = 0;
-      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+      // nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
     }
 
     tone(14, nowNote);
