@@ -226,12 +226,12 @@ void MenzMML::fetch_mml() {
   
       // baseOctave up
       case '>':
-        baseOctave++;
+        octave = ++baseOctave;
         break;
   
       // baseOctave down
       case '<':
-        baseOctave--;
+        octave = ++baseOctave;
         break;
   
       // Relative octave up
