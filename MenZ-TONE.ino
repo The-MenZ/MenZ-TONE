@@ -5,9 +5,7 @@
 //#include "songs.h"
 // #include "songs2.h"
 #include <avr/sleep.h>
-extern "C" {
-  #include "mml.h"
-}
+#include "menzmml.h"
 
 const int PowerLedPin = 15;      // the number of the LED pin
 const int ledPin = 2;      // the number of the LED pin
@@ -78,7 +76,9 @@ unsigned long sleepTimeCount = millis();
 
 const int songNum = 10;
 
-char *testMml = (char*)"t90 l4 cdefgab c+c-b-b+ c6c6c32 o5 r c8defgab r c>d>efga<b r o4 _c_def~g~ab";
+char *testMml = (char*)"t95 l4 cdefgab c+c-b-b+ c6c6.c32c16.c. o5 r c8defgab r c>d>efga<b r o4 _c_def~g~ab";
+
+MenzMML menz_mml;
 
 void ledBlink() {
   static boolean output = LOW;  // プログラム起動前に１回だけHIGH(1)で初期化される
@@ -126,14 +126,24 @@ void setup() {
   pinMode(buttonPin, INPUT);
   pinMode(upButtonPin, INPUT);
   pinMode(downButtonPin, INPUT);
-
-  mml_initialize(testMml);
-
+  
   Serial.begin(9600);
   Serial.println("Hello!! We are The-MenZ!!");
+  menz_mml.mml_initialize(testMml);
 }
 
 void loop() {
+//  delay(1000);
+//  menz_mml.fetch_mml();
+//  Serial.print("tempo:");
+//  Serial.println(menz_mml.tempo);
+//  Serial.print("note:");
+//  Serial.println(menz_mml.note);
+//  Serial.print("duration(relative):");
+//  Serial.println(menz_mml.duration);
+//  Serial.print("duration(absolute):");
+//  Serial.println((int)(((60000 / menz_mml.tempo) * 4) / menz_mml.duration));
+  
   int buttonState = digitalRead(buttonPin);
 
   int reading = digitalRead(upButtonPin);
@@ -175,6 +185,7 @@ void loop() {
 
   // 自動演奏モード
   if(autoPlay == 1){
+    menz_mml.fetch_mml();
     // Serial.println("DEBUG DEBUG DEBUG autoPlay: ");
     // nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
     // tempo = pgm_read_word(&tempoList[currentSong]);
@@ -185,10 +196,11 @@ void loop() {
 //    Serial.println(nowNoteDuration);
     // nowNoteDuration = (int)(((60000 / tempo) * 4)/ nowNoteDuration);
     // 最後の音まで来たらリセット
-    if(nowNote == 0) {
+    if(menz_mml.note == MenzMML::NOTE_END) {
+      menz_mml.reset_cursol();
 //      Serial.print("if currentPosition: ");
 //      Serial.println(currentPosition);
-      currentPosition = 0;
+//      currentPosition = 0;
       // nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
       autoPlay = 0;
 //      Serial.println("DEBUG DEBUG DEBUG reset: ");
@@ -196,13 +208,15 @@ void loop() {
 //      Serial.print("nowNoteDuration: ");
 //      Serial.println(nowNoteDuration);
 
-      if (nowNote > 1) {
-        tone(14, nowNote);
+      if (menz_mml.note > 1) {
+        tone(14, menz_mml.note);
       }
-      delay(nowNoteDuration);
+      // TODO:MenzMMLでgetAbsoluteDuration()とかやってもいい気がする
+      nowNoteDuration = (int)(((60000 / menz_mml.tempo) * 4) / menz_mml.duration);
+      delay(menz_mml.duration);
 
       noTone(14);
-      currentPosition++;
+//      currentPosition++;
     }
 
   }
