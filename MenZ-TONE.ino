@@ -129,9 +129,8 @@ void setup() {
   
   Serial.begin(9600);
   Serial.println("Hello!! We are The-MenZ!!");
-//  strcpy_P(mmlBuffer, (char*)pgm_read_word(&(mml_list[0])));
-//  Serial.println(mmlBuffer);
-//  menz_mml.mml_initialize(mmlBuffer);
+  strcpy_P(mmlBuffer, (char*)pgm_read_word(&(mml_list[currentSong])));
+  menz_mml.mml_initialize(mmlBuffer);
 }
 
 void loop() {
@@ -169,11 +168,10 @@ void loop() {
 
       if (upButtonState == HIGH) {
         //曲の頭出し
-//        currentPosition = 0;
         currentSong++;
-        strcpy_P(mmlBuffer, (char*)pgm_read_word(&(mml_list[0])));
-        menz_mml.mml_initialize(mmlBuffer);
         if(currentSong >= songNum) currentSong = 0;
+        strcpy_P(mmlBuffer, (char*)pgm_read_word(&(mml_list[currentSong])));
+        menz_mml.mml_initialize(mmlBuffer);
       }
     }
   }
