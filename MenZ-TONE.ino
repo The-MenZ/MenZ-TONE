@@ -2,7 +2,7 @@
 #include <avr/pgmspace.h>
 // #include "mml.h"
 // #include "pitches.h"
-//#include "songs.h"
+#include "songs.h"
 // #include "songs2.h"
 #include <avr/sleep.h>
 #include "menzmml.h"
@@ -66,7 +66,7 @@ int autoPlay = 0;
 
 volatile int currentSong = 0;
 
-int currentPosition = 0;
+//int currentPosition = 0;
 int readyTone = 1;
 
 int nowNoteDuration;
@@ -76,7 +76,7 @@ unsigned long sleepTimeCount = millis();
 
 const int songNum = 10;
 
-char *testMml = (char*)"t98 a4.>c8c2 <a4.g8f2 g4.a8>c4. <a8g1 a4.>c8c2 <a4.g8f2 g4a4g4. f8f1";
+char mmlBuffer[320];
 
 MenzMML menz_mml;
 
@@ -129,7 +129,9 @@ void setup() {
   
   Serial.begin(9600);
   Serial.println("Hello!! We are The-MenZ!!");
-  menz_mml.mml_initialize(testMml);
+//  strcpy_P(mmlBuffer, (char*)pgm_read_word(&(mml_list[0])));
+//  Serial.println(mmlBuffer);
+//  menz_mml.mml_initialize(mmlBuffer);
 }
 
 void loop() {
@@ -167,8 +169,10 @@ void loop() {
 
       if (upButtonState == HIGH) {
         //曲の頭出し
-        currentPosition = 0;
+//        currentPosition = 0;
         currentSong++;
+        strcpy_P(mmlBuffer, (char*)pgm_read_word(&(mml_list[0])));
+        menz_mml.mml_initialize(mmlBuffer);
         if(currentSong >= songNum) currentSong = 0;
       }
     }

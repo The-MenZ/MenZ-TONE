@@ -4,7 +4,7 @@
 #include <Arduino.h>
 
 int currentCur, mmlSize, tmpCursol;
-char mmlNotes[512];
+char mmlNotes[320];
 
 // int note;
 // int noteSendFlag = 0;
@@ -35,13 +35,13 @@ MenzMML::MenzMML() {
 }
 
 void MenzMML::mml_initialize(char* mml) {
-  Serial.println("init");
+//  Serial.println("init");
   mmlSize = strlen(mml);
   currentCur = 0;
   for (int u = 0; u < mmlSize; u++) {
     mmlNotes[u] = mml[u];
   }
-  Serial.println("init end");
+//  Serial.println("init end");
 }
 
 void MenzMML::reset_cursol() {
