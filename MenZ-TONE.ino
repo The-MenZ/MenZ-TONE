@@ -1,9 +1,11 @@
 #include <TimerOne.h>
 #include <avr/pgmspace.h>
-#include "pitches.h"
-//#include "songs.h"
-#include "songs2.h"
+// #include "mml.h"
+// #include "pitches.h"
+#include "songs.h"
+// #include "songs2.h"
 #include <avr/sleep.h>
+#include "menzmml.h"
 
 const int PowerLedPin = 15;      // the number of the LED pin
 const int ledPin = 2;      // the number of the LED pin
@@ -64,14 +66,19 @@ int autoPlay = 0;
 
 volatile int currentSong = 0;
 
-int currentPosition = 0;
+//int currentPosition = 0;
 int readyTone = 1;
-int nowNote;
+
 int nowNoteDuration;
-int tempo;
 
 unsigned long sleepTime = 300000;
 unsigned long sleepTimeCount = millis();
+
+const int songNum = 10;
+
+char mmlBuffer[320];
+
+MenzMML menz_mml;
 
 void ledBlink() {
   static boolean output = LOW;  // プログラム起動前に１回だけHIGH(1)で初期化される
@@ -119,12 +126,25 @@ void setup() {
   pinMode(buttonPin, INPUT);
   pinMode(upButtonPin, INPUT);
   pinMode(downButtonPin, INPUT);
-
+  
   Serial.begin(9600);
   Serial.println("Hello!! We are The-MenZ!!");
+  strcpy_P(mmlBuffer, (char*)pgm_read_word(&(mml_list[currentSong])));
+  menz_mml.mml_initialize(mmlBuffer);
 }
 
 void loop() {
+//  delay(1000);
+//  menz_mml.fetch_mml();
+//  Serial.print("tempo:");
+//  Serial.println(menz_mml.tempo);
+//  Serial.print("note:");
+//  Serial.println(menz_mml.note);
+//  Serial.print("duration(relative):");
+//  Serial.println(menz_mml.duration);
+//  Serial.print("duration(absolute):");
+//  Serial.println((int)(((60000 / menz_mml.tempo) * 4) / menz_mml.duration));
+  
   int buttonState = digitalRead(buttonPin);
 
   int reading = digitalRead(upButtonPin);
@@ -148,9 +168,10 @@ void loop() {
 
       if (upButtonState == HIGH) {
         //曲の頭出し
-        currentPosition = 0;
         currentSong++;
         if(currentSong >= songNum) currentSong = 0;
+        strcpy_P(mmlBuffer, (char*)pgm_read_word(&(mml_list[currentSong])));
+        menz_mml.mml_initialize(mmlBuffer);
       }
     }
   }
@@ -158,7 +179,6 @@ void loop() {
   // ボタンプッシュで自動演奏
   if ((millis() - downButtonDebounceTime) > downDebounceDelay) {
     if (downButtonReading != downButtonState) {
-      // Serial.println("DEBUG DEBUG DEBUG downButton: ");
       downButtonState = downButtonReading;
       autoPlay = 1;
     }
@@ -166,34 +186,20 @@ void loop() {
 
   // 自動演奏モード
   if(autoPlay == 1){
-    // Serial.println("DEBUG DEBUG DEBUG autoPlay: ");
-    nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
-    tempo = pgm_read_word(&tempoList[currentSong]);
-    nowNoteDuration = pgm_read_float(&noteDurations[currentSong][currentPosition]);
-    // Serial.print("tempo: ");
-//    Serial.println(tempo);
-//    Serial.print("nowNoteDuration: ");
-//    Serial.println(nowNoteDuration);
-    nowNoteDuration = (int)(((60000 / tempo) * 4)/ nowNoteDuration);
+    menz_mml.fetch_mml();
     // 最後の音まで来たらリセット
-    if(nowNote == 0) {
-//      Serial.print("if currentPosition: ");
-//      Serial.println(currentPosition);
-      currentPosition = 0;
-      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    if(menz_mml.note == MenzMML::NOTE_END) {
+      menz_mml.reset_cursol();
       autoPlay = 0;
-//      Serial.println("DEBUG DEBUG DEBUG reset: ");
     } else {
-//      Serial.print("nowNoteDuration: ");
-//      Serial.println(nowNoteDuration);
-
-      if (nowNote > 1) {
-        tone(14, nowNote);
+      if (menz_mml.note > MenzMML::REST) {
+        tone(14, menz_mml.note);
       }
+      // TODO:MenzMMLでgetAbsoluteDuration()とかやってもいい気がする
+      nowNoteDuration = (int)(((60000 / menz_mml.tempo) * 4) / menz_mml.duration);
       delay(nowNoteDuration);
 
       noTone(14);
-      currentPosition++;
     }
 
   }
@@ -201,26 +207,19 @@ void loop() {
   // ONされて一回だけ実行
   if(buttonState == 1 && readyTone == 1){
     digitalWrite(ledPin, HIGH);
-    nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    menz_mml.fetch_mml();
     autoPlay = 0;
     // 1はスキップ
-    if(nowNote == 1){
-      currentPosition++;
-      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    if(menz_mml.note == MenzMML::REST){
+      menz_mml.fetch_mml();
     }
     // 最後の音まで来たらリセット
-    if(nowNote == 0){
-//      Serial.print("if currentPosition: ");
-//      Serial.println(currentPosition);
-      currentPosition = 0;
-      nowNote = pgm_read_word(&melody[currentSong][currentPosition]);
+    if(menz_mml.note == MenzMML::NOTE_END){
+      menz_mml.reset_cursol();
+      menz_mml.fetch_mml();
     }
 
-    tone(14, nowNote);
-//    Serial.print("tone: ");
-//    Serial.println(nowNote);
-//    Serial.print("currentPosition: ");
-//    Serial.println(currentPosition);
+    tone(14, menz_mml.note);
 
     // ifを何度も実行しないようにフラグを立てる
     readyTone = 0;
@@ -232,7 +231,6 @@ void loop() {
   // OFFされて一回だけ実行
   if (buttonState == 0 && readyTone == 0) {
     digitalWrite(ledPin, LOW);
-    currentPosition++;
     noTone(14);
     delay(50);
     readyTone = 1;
